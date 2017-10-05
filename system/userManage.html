@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link href="gscss/select2.css" rel="stylesheet">
+		<link href="gscss/select2-bootstrap.css" rel="stylesheet">
+		<link href="gscss/datepicker3.css" rel="stylesheet">
+		<link href="gscss/all.css" rel="stylesheet">
+		<link href="gscss/blue.css" rel="stylesheet">
+		<link href="gscss/daterangepicker-bs3.css" rel="stylesheet">
+		<link href="gscss/AdminLTE.css" rel="stylesheet">
+		<link href="gscss/skin-blue.min.css" rel="stylesheet">
+		<link href="gscss/skin-black.min.css" rel="stylesheet">
+		<link href="gscss/skin-green.min.css" rel="stylesheet">
+		<link href="gscss/skin-purple.min.css" rel="stylesheet">
+		<link href="gscss/skin-red.min.css" rel="stylesheet">
+		<link href="gscss/skin-yellow.min.css" rel="stylesheet">
+		<link href="gscss/common.css" rel="stylesheet">
+		<link href="gscss/jquery.growl.css" rel="stylesheet">
+		<link href="gscss/jsgrid.css" rel="stylesheet">
+		<link href="gscss/polaris.css" rel="stylesheet">
+</head>
+<body>
+
+				<form class="form-horizontal" method="POST" ng-controller="appCtrl" id="modal_user_form" novalidate="novalidate">
+					<input id="version" name="version" type="hidden">
+					<input id="userId" name="id" type="hidden">
+					<input id="type" name="type" value="1" type="hidden">
+					<div class="form-group">
+						<!--<label class="col-md-2 control-label" for="loginName">登录名:</label>
+						<div class="col-md-4">
+							<input class="form-control" type="text" id="detail-loginName" name="name" placeholder="中文/字母开头+数字下划线组合,总长度2~25字符" value="" required autofocus>
+						</div>-->
+						<label class="col-md-2 control-label" for="realName"><span style="color:red">*</span>真实姓名:</label>
+						<div class="col-md-4">
+							<input class="form-control" id="detail-realName" name="realName" placeholder="录入用户真实姓名" value="" required="" aria-required="true" type="text">
+						</div>
+						<label class="col-md-2 control-label" for="mobile"><span style="color:red">*</span>手机号:</label>
+						<div class="col-md-4">
+							<input class="form-control mob" id="detail-mobile" name="mobile" placeholder="手机号作为登录帐号" data-mask="" value="" required="" aria-required="true" type="text">
+						 </div>
+					</div>
+					<div class="form-group">
+						
+						<label class="col-md-2 control-label" for="email">邮箱:</label>
+						<div class="col-md-4">
+							<input class="form-control" id="detail-email" name="email" placeholder="录入用户邮箱地址" value="" type="text">
+						</div>
+						<label class="col-md-2 control-label" for="organ"><span style="color:red">*</span>所属部门:</label>
+						<div class="col-md-4">
+							<div class="select2-container select2" id="s2id_detail-organ"><a href="javascript:void(0)" class="select2-choice select2-default" tabindex="-1">   <span class="select2-chosen" id="select2-chosen-1">用户所属部门</span><abbr class="select2-search-choice-close"></abbr>   <span class="select2-arrow" role="presentation"><b role="presentation"></b></span></a><label for="s2id_autogen1" class="select2-offscreen"></label><input class="select2-focusser select2-offscreen" aria-haspopup="true" role="button" aria-labelledby="select2-chosen-1" id="s2id_autogen1" type="text"><div class="select2-drop select2-display-none select2-with-searchbox">   <div class="select2-search">       <label for="s2id_autogen1_search" class="select2-offscreen"></label>       <input autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" class="select2-input" role="combobox" aria-expanded="true" aria-autocomplete="list" aria-owns="select2-results-1" id="s2id_autogen1_search" placeholder="" type="text">   </div>   <ul class="select2-results" role="listbox" id="select2-results-1">   </ul></div></div><input id="detail-organ" name="organ" value="" class="select2 select2-offscreen" data-placeholder="用户所属部门" required="" tabindex="-1" title="" aria-required="true" type="hidden">
+						</div>
+					</div>
+					<div class="form-group">
+						
+						<label class="col-md-2 control-label" for="organs">管辖部门:</label>
+						<div class="col-md-4">
+							<div class="select2-container select2-container-multi select2" id="s2id_detail-organs"><ul class="select2-choices">  <li class="select2-search-field">    <label for="s2id_autogen2" class="select2-offscreen"></label>    <input autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" class="select2-input" id="s2id_autogen2" style="width: 20px;" placeholder="" type="text">  </li></ul><div class="select2-drop select2-drop-multi select2-display-none">   <ul class="select2-results">   </ul></div></div><input id="detail-organs" name="organs" value="0" class="select2 select2-offscreen" data-placeholder="选择后可查到对应部门的运单" required="" tabindex="-1" aria-required="true" type="hidden">
+						</div>
+						<label class="col-md-2 control-label" for="roles"><span style="color:red">*</span>拥有角色:</label>
+						<div class="col-md-4">
+							<div class="select2-container select2-container-multi select2" id="s2id_detail-role"><ul class="select2-choices">  <li class="select2-search-field">    <label for="s2id_autogen4" class="select2-offscreen"></label>    <input autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" class="select2-input select2-default" id="s2id_autogen4" style="width: 110%;" placeholder="" type="text">  </li></ul><div class="select2-drop select2-drop-multi select2-display-none">   <ul class="select2-results">   </ul></div></div><input id="detail-role" name="roles" value="" class="select2 select2-offscreen" data-placeholder="选择角色" required="" tabindex="-1" aria-required="true">
+						</div>
+						
+					</div>
+					<div class="form-group">
+						<label class="col-md-2 control-label" for="valid">启用:</label>
+						<div class="col-md-4">
+							<input class="minimal" name="valid" id="valid" checked="" value="true" type="checkbox">
+						</div>
+						<label class="col-md-2 control-label" for="phone">用户初始密码:</label>
+						<div class="col-md-4">
+						<span class="label label-danger">gsh12345</span>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-md-2 control-label" for="registerTime">注册时间:</label>
+						<div class="col-md-4">
+							<input class="form-control" id="detail-registerTime" readonly="" name="registerTime" placeholder="尚未注册" value="" type="text">
+						</div>
+						<label class="col-md-2 control-label" for="lastLoginTime">最后登录:</label>
+						<div class="col-md-4">
+							<input class="form-control" id="detail-lastLoginTime" readonly="" name="lastLoginTime" placeholder="暂无登陆" value="" type="text">
+						</div>
+					</div>
+					<div class="box-footer clearfix">
+						<button id="saveUser_btn" class="btn btn-success btn-flat"><i class="fa fa-save"></i> 保 存 </button>
+						<button" id="resetUser_btn" class="btn btn-warning btn-flat"><i class="fa fa-undo"></i> 新 增 
+					</button"></div>
+				</form>
+			
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link href="gscss/select2.css" rel="stylesheet">
+		<link href="gscss/select2-bootstrap.css" rel="stylesheet">
+		<link href="gscss/datepicker3.css" rel="stylesheet">
+		<link href="gscss/all.css" rel="stylesheet">
+		<link href="gscss/blue.css" rel="stylesheet">
+		<link href="gscss/daterangepicker-bs3.css" rel="stylesheet">
+		<link href="gscss/AdminLTE.css" rel="stylesheet">
+		<link href="gscss/skin-blue.min.css" rel="stylesheet">
+		<link href="gscss/skin-black.min.css" rel="stylesheet">
+		<link href="gscss/skin-green.min.css" rel="stylesheet">
+		<link href="gscss/skin-purple.min.css" rel="stylesheet">
+		<link href="gscss/skin-red.min.css" rel="stylesheet">
+		<link href="gscss/skin-yellow.min.css" rel="stylesheet">
+		<link href="gscss/common.css" rel="stylesheet">
+		<link href="gscss/jquery.growl.css" rel="stylesheet">
+		<link href="gscss/jsgrid.css" rel="stylesheet">
+		<link href="gscss/polaris.css" rel="stylesheet">
+</head>
+<body>
+
+				<form class="form-horizontal" method="POST" id="modal_organ_form" novalidate="novalidate">
+					<input id="version" name="version" type="hidden">
+					<input id="organId" name="id" type="hidden">
+					<div class="form-group">
+						<label class="col-md-2 control-label" for="name"><span style="color:red">*</span>部门名称:</label>
+						<div class="col-md-4">
+							<input class="form-control" id="detail-name" name="name" placeholder="录入部门名称" value="" required="" autofocus="" aria-required="true" type="text">
+						</div>
+						<label class="col-md-2 control-label" for="alias">部门简称:</label>
+						<div class="col-md-4">
+							<input class="form-control" id="detail-alias" name="alias" placeholder="录入部门简称" value="" type="text">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-md-2 control-label" for="code">部门编码:</label>
+						<div class="col-md-4">
+							<input class="form-control" id="detail-code" name="code" placeholder="录入部门编码" value="" type="text">
+						</div>
+						<label class="col-md-2 control-label" for="parent"><span style="color:red">*</span>上级部门:</label>
+						<div class="col-md-4">
+							<div class="select2-container" id="s2id_detail-parent"><a href="javascript:void(0)" class="select2-choice" tabindex="-1">   <span class="select2-chosen" id="select2-chosen-3">安徽长风物流有限公司</span><abbr class="select2-search-choice-close"></abbr>   <span class="select2-arrow" role="presentation"><b role="presentation"></b></span></a><label for="s2id_autogen3" class="select2-offscreen"></label><input class="select2-focusser select2-offscreen" aria-haspopup="true" role="button" aria-labelledby="select2-chosen-3" id="s2id_autogen3" type="text"><div class="select2-drop select2-display-none select2-with-searchbox">   <div class="select2-search">       <label for="s2id_autogen3_search" class="select2-offscreen"></label>       <input autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" class="select2-input" role="combobox" aria-expanded="true" aria-autocomplete="list" aria-owns="select2-results-3" id="s2id_autogen3_search" placeholder="" type="text">   </div>   <ul class="select2-results" role="listbox" id="select2-results-3">   </ul></div></div><input id="detail-parent" name="parent" value="1054" class="select2-remote select2-offscreen" data-placeholder="上级部门" required="" tabindex="-1" title="" aria-required="true" type="hidden">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-md-2 control-label" for="address">地址:</label>
+						<div class="col-md-4">
+							<input class="form-control" id="detail-address" name="address" placeholder="录入部门地址" value="" type="text">
+						</div>
+						<label class="col-md-2 control-label" for="phone">联系电话:</label>
+						<div class="col-md-4">
+							<input class="form-control" id="detail-phone" name="phone" placeholder="录入联系电话" value="" type="text">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-md-2 control-label" for="valid">启用:</label>
+						<div class="col-md-4">
+							<input class="minimal" name="valid" value="true" checked="" type="checkbox">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-md-2 control-label" for="remark">备注:</label>
+						<div class="col-md-8">
+							<input class="form-control" id="detail-remark" name="remark" placeholder="录入机构备注" value="" type="text">
+						</div>
+					</div>
+					<div class="box-footer clearfix">
+						<button id="saveOrgan_btn" class="btn btn-success btn-flat"><i class="fa fa-save"></i> 保 存 </button>
+						<button" id="resetOrgan_btn" class="btn btn-warning btn-flat"><i class="fa fa-undo"></i> 新 增 
+					</button"></div>
+				</form>
+			
+</body>
+</html>

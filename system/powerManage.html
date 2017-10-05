@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link href="gscss/select2.css" rel="stylesheet">
+		<link href="gscss/select2-bootstrap.css" rel="stylesheet">
+		<link href="gscss/datepicker3.css" rel="stylesheet">
+		<link href="gscss/all.css" rel="stylesheet">
+		<link href="gscss/blue.css" rel="stylesheet">
+		<link href="gscss/daterangepicker-bs3.css" rel="stylesheet">
+		<link href="gscss/AdminLTE.css" rel="stylesheet">
+		<link href="gscss/skin-blue.min.css" rel="stylesheet">
+		<link href="gscss/skin-black.min.css" rel="stylesheet">
+		<link href="gscss/skin-green.min.css" rel="stylesheet">
+		<link href="gscss/skin-purple.min.css" rel="stylesheet">
+		<link href="gscss/skin-red.min.css" rel="stylesheet">
+		<link href="gscss/skin-yellow.min.css" rel="stylesheet">
+		<link href="gscss/common.css" rel="stylesheet">
+		<link href="gscss/jquery.growl.css" rel="stylesheet">
+		<link href="gscss/jsgrid.css" rel="stylesheet">
+		<link href="gscss/polaris.css" rel="stylesheet">
+</head>
+<body>
+
+				<form class="form-horizontal" method="POST" ng-controller="appCtrl" id="modal_user_form" novalidate="novalidate">
+					<input id="version" name="version" type="hidden">
+					<input id="userId" name="id" type="hidden">
+					<input id="type" name="type" value="1" type="hidden">
+					<div class="form-group">
+						<!--<label class="col-md-2 control-label" for="loginName">登录名:</label>
+						<div class="col-md-4">
+							<input class="form-control" type="text" id="detail-loginName" name="name" placeholder="中文/字母开头+数字下划线组合,总长度2~25字符" value="" required autofocus>
+						</div>-->
+						<label class="col-md-2 control-label" for="realName"><span style="color:red">*</span>用户姓名:</label>
+						<div class="col-md-4">
+							<input class="form-control" id="detail-realName" name="realName" placeholder="选择用户" value="" required="" aria-required="true" type="text">
+						</div>
+						<label class="col-md-2 control-label" for="mobile"><span style="color:red">*</span>用户角色:</label>
+						<div class="col-md-4">
+							<input class="form-control mob" id="detail-mobile" name="mobile" placeholder="选择用户角色权限" data-mask="" value="" required="" aria-required="true" type="text">
+						 </div>
+					</div>
+					<div class="form-group">
+						
+						
+						
+					</div>
+					<div class="form-group">
+						<label class="col-md-2 control-label" for="valid">启用:</label>
+						<div class="col-md-4">
+							是
+							<input class="minimal" name="valid" id="valid" checked="" value="true" type="radio">
+							否
+							<input class="minimal" name="valid" id="valid" checked="" value="true" type="radio">
+						</div>
+						
+				
+					</div>
+					<div class="form-group">
+						<label class="col-md-2 control-label" for="registerTime">生效时间:</label>
+						<div class="col-md-4">
+							<input class="form-control" id="detail-registerTime" readonly="" name="registerTime" placeholder="2017-10-12" value="" type="text">
+						</div>
+						<label class="col-md-2 control-label" for="lastLoginTime">失效:</label>
+						<div class="col-md-4">
+							<input class="form-control" id="detail-lastLoginTime" readonly="" name="lastLoginTime" placeholder="2018-10-12" value="" type="text">
+						</div>
+					</div>
+					<div class="box-footer clearfix">
+						<button id="saveUser_btn" class="btn btn-success btn-flat"><i class="fa fa-save"></i> 保 存 </button>
+						
+					</button"></div>
+				</form>
+			
+</body>
+</html>

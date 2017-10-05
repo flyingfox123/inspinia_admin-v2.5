@@ -1,0 +1,114 @@
+
+			<div class="tab-pane" id="addr-list" style="min-height:520px;">
+				<div class="form-group" id="list-sch-form">
+				  	<ul class="list-inline">
+						<li><label class="control-label">联系人:</label></li>
+						<li><input name="linkman__like" class="form-control input-sm" style="width: 150px;" placeholder="联系人姓名" value="" type="text"></li>
+						<!--
+						<li><label class="control-label">手机:</label></li>
+						<li><input type="text" id="list-mobile" class="form-control input-sm" style="width: 150px;" placeholder="手机号码" value=""></li>
+						-->
+						<li><label class="control-label">电话:</label></li>
+						<li><input name="tel__like" class="form-control input-sm" style="width: 150px;" placeholder="固话/手机" value="" type="text"></li>
+						<li><label class="control-label">地址:</label></li>
+						<li><input name="region__full_name__like" class="form-control input-sm" style="width: 150px;" placeholder="行政区域" value="" type="text"></li>
+						<li><label class="control-label">类型:</label></li>
+						<li>
+							<div class="select2-container select2" id="s2id_autogen1" style="width: 150px;"><a href="javascript:void(0)" class="select2-choice select2-default" tabindex="-1">   <span class="select2-chosen" id="select2-chosen-2">地址类型</span><abbr class="select2-search-choice-close"></abbr>   <span class="select2-arrow" role="presentation"><b role="presentation"></b></span></a><label for="s2id_autogen2" class="select2-offscreen"></label><input class="select2-focusser select2-offscreen" aria-haspopup="true" role="button" aria-labelledby="select2-chosen-2" id="s2id_autogen2" tabindex="-1" type="text"><div class="select2-drop select2-display-none select2-with-searchbox">   <div class="select2-search">       <label for="s2id_autogen2_search" class="select2-offscreen"></label>       <input autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" class="select2-input" role="combobox" aria-expanded="true" aria-autocomplete="list" aria-owns="select2-results-2" id="s2id_autogen2_search" placeholder="" type="text">   </div>   <ul class="select2-results" role="listbox" id="select2-results-2">   </ul></div></div><select name="type__eq" class="select2 select2-offscreen" style="width: 150px;" tabindex="-1" aria-hidden="true" data-placeholder="地址类型" title="">
+								  <option></option>
+								  <option value="1">提货地址</option>
+								  <option value="0">卸货地址</option>
+							</select>
+							<style>
+								.select2-default{
+									height:35px @import;
+								}
+							</style>
+						</li>
+						<li>
+							<button id="sch_btn" class="btn btn-default btn-block btn-flat btn-sm"><i class="fa fa-search"></i> 查 询</button>
+						</li>
+						<li>
+							<button id="new_btn" class="btn btn-default btn-block btn-flat btn-sm"><i class="fa fa-plus-square-o"></i> 新 增</button>
+						</li>
+					</ul>
+					<input id="shipper__id__eq" value="693" type="hidden">
+					<input id="type__in" name="type__in" value="0,1" type="hidden">
+				</div>
+				
+				<div id="grid" class="jsgrid" style="position: relative; height: 415px; width: 100%;"><div class="jsgrid-grid-header jsgrid-header-scrollbar"><table class="jsgrid-table"><tbody><tr class="jsgrid-header-row"><th style="width: 50px;" class="jsgrid-header-sortable">单位名称</th><th style="width: 20px;" class="jsgrid-header-sortable">联系人</th><th style="width: 20px;" class="jsgrid-header-sortable">类型</th><th style="width: 40px;" class="jsgrid-header-sortable">手机</th><th style="width: 40px;" class="jsgrid-header-sortable">固话</th><th style="width: 80px;" class="jsgrid-header-sortable">详细地址</th><th style="width: 40px;" class="jsgrid-header-sortable">操作</th></tr><tr class="jsgrid-filter-row" style="display: none;"><td style="width: 50px;"></td><td style="width: 21px;"></td><td style="width: 21px;"></td><td style="width: 41px;"></td><td style="width: 41px;"></td><td style="width: 81px;"></td><td style="width: 41px;"></td></tr><tr class="jsgrid-insert-row" style="display: none;"><td style="width: 50px;"></td><td style="width: 21px;"></td><td style="width: 21px;"></td><td style="width: 41px;"></td><td style="width: 41px;"></td><td style="width: 81px;"></td><td style="width: 41px;"></td></tr></tbody></table></div><div class="jsgrid-grid-body" style="height: 415px;"><table class="jsgrid-table" style="width: 100px;"><tbody><tr class="jsgrid-row"><td style="width: 50px;">姚名政</td><td style="width: 20px;" class="jsgrid-align-center">姚名政</td><td style="width: 20px;" class="jsgrid-align-center">提货地址</td><td style="width: 40px;" class="jsgrid-align-center">18096654750</td><td style="width: 40px;" class="jsgrid-align-center"></td><td style="width: 80px;">安徽省 合肥市 瑶海区 长江东路271号漕冲物流园</td><td style="width: 40px;" class="jsgrid-align-center"><a href="javascript:void(0);" class="btn btn-sm btn-flat"><i class="fa fa-delete"></i>编辑</a><a href="javascript:void(0);" class="btn btn-sm btn-flat"><i class="fa fa-delete"></i>删除</a></td></tr><tr class="jsgrid-alt-row"><td style="width: 50px;">肖武</td><td style="width: 20px;" class="jsgrid-align-center">肖武</td><td style="width: 20px;" class="jsgrid-align-center">卸货地址</td><td style="width: 40px;" class="jsgrid-align-center">13856202131</td><td style="width: 40px;" class="jsgrid-align-center"></td><td style="width: 80px;">安徽省 芜湖市 无为县 褔渡小学</td><td style="width: 40px;" class="jsgrid-align-center"><a href="javascript:void(0);" class="btn btn-sm btn-flat"><i class="fa fa-delete"></i>编辑</a><a href="javascript:void(0);" class="btn btn-sm btn-flat"><i class="fa fa-delete"></i>删除</a></td></tr><tr class="jsgrid-row"><td style="width: 50px;">张传江</td><td style="width: 20px;" class="jsgrid-align-center">张传江</td><td style="width: 20px;" class="jsgrid-align-center">卸货地址</td><td style="width: 40px;" class="jsgrid-align-center">15005651557</td><td style="width: 40px;" class="jsgrid-align-center"></td><td style="width: 80px;">安徽省 芜湖市 无为县 高新大道安徽长风物流有限公司</td><td style="width: 40px;" class="jsgrid-align-center"><a href="javascript:void(0);" class="btn btn-sm btn-flat"><i class="fa fa-delete"></i>编辑</a><a href="javascript:void(0);" class="btn btn-sm btn-flat"><i class="fa fa-delete"></i>删除</a></td></tr><tr class="jsgrid-alt-row"><td style="width: 50px;">张学恒</td><td style="width: 20px;" class="jsgrid-align-center">张学恒</td><td style="width: 20px;" class="jsgrid-align-center">提货地址</td><td style="width: 40px;" class="jsgrid-align-center">13965678598</td><td style="width: 40px;" class="jsgrid-align-center"></td><td style="width: 80px;">安徽省 芜湖市 无为县 高新工业园区</td><td style="width: 40px;" class="jsgrid-align-center"><a href="javascript:void(0);" class="btn btn-sm btn-flat"><i class="fa fa-delete"></i>编辑</a><a href="javascript:void(0);" class="btn btn-sm btn-flat"><i class="fa fa-delete"></i>删除</a></td></tr><tr class="jsgrid-row"><td style="width: 50px;">安徽长风物流有限公司</td><td style="width: 20px;" class="jsgrid-align-center">张忠美</td><td style="width: 20px;" class="jsgrid-align-center">提货地址</td><td style="width: 40px;" class="jsgrid-align-center">13905657288</td><td style="width: 40px;" class="jsgrid-align-center"></td><td style="width: 80px;">安徽省 芜湖市 无为县 高新工业园区</td><td style="width: 40px;" class="jsgrid-align-center"><a href="javascript:void(0);" class="btn btn-sm btn-flat"><i class="fa fa-delete"></i>编辑</a><a href="javascript:void(0);" class="btn btn-sm btn-flat"><i class="fa fa-delete"></i>删除</a></td></tr><tr class="jsgrid-alt-row"><td style="width: 50px;">安徽长风物流有限公司</td><td style="width: 20px;" class="jsgrid-align-center">张学恒</td><td style="width: 20px;" class="jsgrid-align-center">提货地址</td><td style="width: 40px;" class="jsgrid-align-center">13965678598</td><td style="width: 40px;" class="jsgrid-align-center"></td><td style="width: 80px;">安徽省 芜湖市 无为县 高新工业园区</td><td style="width: 40px;" class="jsgrid-align-center"><a href="javascript:void(0);" class="btn btn-sm btn-flat"><i class="fa fa-delete"></i>编辑</a><a href="javascript:void(0);" class="btn btn-sm btn-flat"><i class="fa fa-delete"></i>删除</a></td></tr><tr class="jsgrid-row"><td style="width: 50px;">安徽长风物流有限公司</td><td style="width: 20px;" class="jsgrid-align-center">张汉林</td><td style="width: 20px;" class="jsgrid-align-center">提货地址</td><td style="width: 40px;" class="jsgrid-align-center">13865655076</td><td style="width: 40px;" class="jsgrid-align-center"></td><td style="width: 80px;">安徽省 芜湖市 无为县 高新工业园区</td><td style="width: 40px;" class="jsgrid-align-center"><a href="javascript:void(0);" class="btn btn-sm btn-flat"><i class="fa fa-delete"></i>编辑</a><a href="javascript:void(0);" class="btn btn-sm btn-flat"><i class="fa fa-delete"></i>删除</a></td></tr><tr class="jsgrid-alt-row"><td style="width: 50px;">安徽长风物流有限公司</td><td style="width: 20px;" class="jsgrid-align-center">何顺</td><td style="width: 20px;" class="jsgrid-align-center">提货地址</td><td style="width: 40px;" class="jsgrid-align-center">13956666003</td><td style="width: 40px;" class="jsgrid-align-center"></td><td style="width: 80px;">安徽省 芜湖市 无为县 高新工业园区</td><td style="width: 40px;" class="jsgrid-align-center"><a href="javascript:void(0);" class="btn btn-sm btn-flat"><i class="fa fa-delete"></i>编辑</a><a href="javascript:void(0);" class="btn btn-sm btn-flat"><i class="fa fa-delete"></i>删除</a></td></tr><tr class="jsgrid-row"><td style="width: 50px;">安徽长风物流有限公司</td><td style="width: 20px;" class="jsgrid-align-center">鲍时安</td><td style="width: 20px;" class="jsgrid-align-center">提货地址</td><td style="width: 40px;" class="jsgrid-align-center">18855378807</td><td style="width: 40px;" class="jsgrid-align-center"></td><td style="width: 80px;">安徽省 芜湖市 无为县 高新工业园区</td><td style="width: 40px;" class="jsgrid-align-center"><a href="javascript:void(0);" class="btn btn-sm btn-flat"><i class="fa fa-delete"></i>编辑</a><a href="javascript:void(0);" class="btn btn-sm btn-flat"><i class="fa fa-delete"></i>删除</a></td></tr><tr class="jsgrid-alt-row"><td style="width: 50px;">安徽长风物流有限公司</td><td style="width: 20px;" class="jsgrid-align-center">张夕涛</td><td style="width: 20px;" class="jsgrid-align-center">提货地址</td><td style="width: 40px;" class="jsgrid-align-center">13905657699</td><td style="width: 40px;" class="jsgrid-align-center"></td><td style="width: 80px;">安徽省 芜湖市 无为县 高新工业园区</td><td style="width: 40px;" class="jsgrid-align-center"><a href="javascript:void(0);" class="btn btn-sm btn-flat"><i class="fa fa-delete"></i>编辑</a><a href="javascript:void(0);" class="btn btn-sm btn-flat"><i class="fa fa-delete"></i>删除</a></td></tr><tr class="jsgrid-row"><td style="width: 50px;">安徽长风物流有限公司</td><td style="width: 20px;" class="jsgrid-align-center">何凤国</td><td style="width: 20px;" class="jsgrid-align-center">提货地址</td><td style="width: 40px;" class="jsgrid-align-center">13866986222</td><td style="width: 40px;" class="jsgrid-align-center"></td><td style="width: 80px;">安徽省 芜湖市 无为县 高新工业园区</td><td style="width: 40px;" class="jsgrid-align-center"><a href="javascript:void(0);" class="btn btn-sm btn-flat"><i class="fa fa-delete"></i>编辑</a><a href="javascript:void(0);" class="btn btn-sm btn-flat"><i class="fa fa-delete"></i>删除</a></td></tr><tr class="jsgrid-alt-row"><td style="width: 50px;">安徽长风物流合肥办</td><td style="width: 20px;" class="jsgrid-align-center">姚名政</td><td style="width: 20px;" class="jsgrid-align-center">提货地址</td><td style="width: 40px;" class="jsgrid-align-center">18096654750</td><td style="width: 40px;" class="jsgrid-align-center">0551-63699662</td><td style="width: 80px;">安徽省 合肥市 瑶海区 长江东路271号漕冲物流园</td><td style="width: 40px;" class="jsgrid-align-center"><a href="javascript:void(0);" class="btn btn-sm btn-flat"><i class="fa fa-delete"></i>编辑</a><a href="javascript:void(0);" class="btn btn-sm btn-flat"><i class="fa fa-delete"></i>删除</a></td></tr><tr class="jsgrid-row"><td style="width: 50px;">安徽长风物流有限公司</td><td style="width: 20px;" class="jsgrid-align-center">张传江</td><td style="width: 20px;" class="jsgrid-align-center">卸货地址</td><td style="width: 40px;" class="jsgrid-align-center">15005651557</td><td style="width: 40px;" class="jsgrid-align-center"></td><td style="width: 80px;">安徽省 芜湖市 无为县 高新大道安徽长风物流有限公司</td><td style="width: 40px;" class="jsgrid-align-center"><a href="javascript:void(0);" class="btn btn-sm btn-flat"><i class="fa fa-delete"></i>编辑</a><a href="javascript:void(0);" class="btn btn-sm btn-flat"><i class="fa fa-delete"></i>删除</a></td></tr><tr class="jsgrid-alt-row"><td style="width: 50px;">长风物流无为营业部</td><td style="width: 20px;" class="jsgrid-align-center">肖武</td><td style="width: 20px;" class="jsgrid-align-center">卸货地址</td><td style="width: 40px;" class="jsgrid-align-center">13866992131</td><td style="width: 40px;" class="jsgrid-align-center"></td><td style="width: 80px;">安徽省 芜湖市 无为县 宏旺公司旁</td><td style="width: 40px;" class="jsgrid-align-center"><a href="javascript:void(0);" class="btn btn-sm btn-flat"><i class="fa fa-delete"></i>编辑</a><a href="javascript:void(0);" class="btn btn-sm btn-flat"><i class="fa fa-delete"></i>删除</a></td></tr><tr class="jsgrid-row"><td style="width: 50px;">长风物流芜湖分公司</td><td style="width: 20px;" class="jsgrid-align-center">李善宝</td><td style="width: 20px;" class="jsgrid-align-center">提货地址</td><td style="width: 40px;" class="jsgrid-align-center">15156312797</td><td style="width: 40px;" class="jsgrid-align-center"></td><td style="width: 80px;">安徽省 芜湖市 鸠江区 东部飞阳物流园</td><td style="width: 40px;" class="jsgrid-align-center"><a href="javascript:void(0);" class="btn btn-sm btn-flat"><i class="fa fa-delete"></i>编辑</a><a href="javascript:void(0);" class="btn btn-sm btn-flat"><i class="fa fa-delete"></i>删除</a></td></tr></tbody></table></div><div class="jsgrid-pager-container" style="display: none;"></div><div class="jsgrid-load-shader" style="display: none; position: absolute; top: 0px; right: 0px; bottom: 0px; left: 0px; z-index: 1000;"></div><div class="jsgrid-load-panel" style="display: none; position: absolute; top: 50%; left: 50%; z-index: 1000;">载入中</div></div>
+             	<ul id="pageBar" class="pagination"><li class="active"><a title="Current page is 1">1</a></li></ul>
+			</div>
+			
+			<div class="tab-pane active" id="addr-detail" style="min-height:560px;">
+				<form class="form-horizontal" method="POST" id="modal_receipt_form" novalidate="novalidate">
+					<input id="id" name="id" type="hidden">
+					<input id="version" name="version" type="hidden">
+					
+					<div class="row">
+						<div class="form-group col-md-6">
+							<label class="col-md-4 control-label required" for="linkman" aria-required="true">联系人:</label>
+							<div class="col-md-8">
+								<input class="form-control" id="detail-linkman" name="linkman" placeholder="录入联系人" value="" maxlength="50" required="" autofocus="" aria-required="true" type="text">
+							</div>
+						</div>
+						<div class="form-group col-md-6">
+							<label class="col-md-4 control-label" for="mobile">手机号码:</label>
+							<div class="col-md-8">
+								<input class="form-control mob" maxlength="20" id="detail-mobile" name="mobile" placeholder="录入手机号码" value="" data-inputmask="'mask': ['999 999 99999']" data-mask="" type="text">
+							</div>
+						</div>
+					</div>
+					
+					<div class="row">
+						<div class="form-group col-md-6">
+							<label class="col-md-4 control-label" for="tel">固定电话:</label>
+							<div class="col-md-8">
+								<input class="form-control tel" id="detail-tel" name="tel" placeholder="录入联系电话" value="" maxlength="20" type="text">
+							</div>
+						</div>
+						<div class="form-group col-md-6">
+							<label class="col-md-4 control-label required" for="name" aria-required="true">单位名称:</label>
+							<div class="col-md-8">
+								<input class="form-control" id="detail-name" name="name" placeholder="录入收、卸货单位" value="" maxlength="100" required="" aria-required="true" type="text">
+							</div>
+						</div>
+					</div>
+					
+					<div class="row">
+						<div class="form-group col-md-6">
+							<label class="col-md-4 control-label required" for="type" aria-required="true">地址类型:</label>
+							<div class="col-md-8">
+								<div class="select2-container select2" id="s2id_detail-type" style="width: 100%;"><a href="javascript:void(0)" class="select2-choice select2-default" tabindex="-1">   <span class="select2-chosen" id="select2-chosen-3">请选择地址类型</span><abbr class="select2-search-choice-close"></abbr>   <span class="select2-arrow" role="presentation"><b role="presentation"></b></span></a><label for="s2id_autogen3" class="select2-offscreen"></label><input class="select2-focusser select2-offscreen" aria-haspopup="true" role="button" aria-labelledby="select2-chosen-3" id="s2id_autogen3" type="text"><div class="select2-drop select2-display-none select2-with-searchbox">   <div class="select2-search">       <label for="s2id_autogen3_search" class="select2-offscreen"></label>       <input autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" class="select2-input" role="combobox" aria-expanded="true" aria-autocomplete="list" aria-owns="select2-results-3" id="s2id_autogen3_search" placeholder="" type="text">   </div>   <ul class="select2-results" role="listbox" id="select2-results-3">   </ul></div></div><select class="select2 select2-offscreen" id="detail-type" name="type" style="width: 100%;" required="" tabindex="-1" title="" aria-required="true">
+									  <option></option>
+									  <option value="1">提货地址</option>
+									  <option value="0">卸货地址</option>
+								</select>
+							</div>
+						</div>
+					</div>
+					
+					<div class="row ng-scope" id="reg_div">
+						<div class="form-group col-md-6">
+							<label class="col-md-4 control-label required" for="city" aria-required="true">所在地:</label>
+							<div class="col-md-8">
+								<input name="region" id="region" class="form-control ng-scope ng-isolate-scope ng-pristine ng-invalid ng-invalid-required" placeholder="选择省市区" ng-controller="appCtrl" select-address="" p="p" c="c" a="a" d="d" region-name="regionName" region-code="regionCode" ng-model="xxx" required="" readonly="readonly" style="background-color: rgb(255, 255, 255); cursor: default;" aria-required="true" type="text">
+								<input name="regionCode" id="regionCode" type="hidden">
+								<input name="province" id="province" type="hidden">
+								<input name="city" id="city" type="hidden">
+								<input name="district" id="district" type="hidden">
+								<input name="full_name" id="full_name" type="hidden">
+							</div>
+						</div>
+						<div class="form-group col-md-6"> 
+							<input class="form-control" id="detail-address" name="address" placeholder="具体街道,例如:北京路321号" maxlength="100" value="" required="" aria-required="true" type="text">
+						</div>
+					</div>
+					<div class="box-footer clearfix col-md-12">
+						<button id="pub_btn" class="btn btn-success btn-flat" data-loading-text="加载中..."><i class="fa fa-save"></i> 保 存 </button>
+						<button" id="tmp_btn" class="btn btn-warning btn-flat" data-loading-text="加载中..."><i class="fa fa-plus-square-o"></i> 新 增 
+					</button"></div>
+				</form>
+			</div>
+			
+		

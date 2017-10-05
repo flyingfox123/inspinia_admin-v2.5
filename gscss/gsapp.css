@@ -1,0 +1,191 @@
+body {
+	font-family: 微软雅黑, arial, 'Hiragino Sans GB', 宋体, sans-serif;
+	font-size: 12px;
+}
+/**全局Box**/
+.box{
+	margin-bottom:5px;
+}
+
+.box-body{
+	background-color:#fafafa !important;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+.box-header{
+	padding:5px 10px 5px 10px;
+}
+.box-header h3{
+	font-size:12px !important;
+	font-weight:bold !important;
+}
+
+label{
+	font-weight:normal;
+}
+
+/**收发货地址**/
+.addr_tab tbody tr td{
+	/**border-bottom:1px dashed #000; height:1px**/
+}
+
+.addr_tab tbody tr:nth-of-type(odd){background:#FDFBFD;}
+
+.addr_tab tbody tr:nth-of-type(even){background:#FFFEFF;}
+
+.addr_tab tbody tr td{
+	padding:5px;
+}
+.addr{
+	padding:0px;
+}
+.addr div{
+	margin-bottom:5px;
+}
+
+.box table{
+	margin-bottom:2px;
+}
+
+#receAddr{
+	margin-bottom:5px;
+}
+
+
+/**全局Radio**/
+.radio-inline{
+	padding-left:0px;
+}
+
+.dl-horizontal{
+	margin-bottom:3px;
+}
+
+/**调车,服务布局**/	
+.dl-horizontal dt {
+    width: 110px !important;
+	font-weight:normal;
+}
+.dl-horizontal dd {
+	margin-left: 130px !important;
+}
+
+
+.mouse-hover:hover{
+	display	:display;
+	color: #dd4b39;
+}
+
+.mouse-hover:hover{
+	display	:none;
+	color: #dd4b39;
+}
+
+/**附件图片边框颜色**/
+.rBorder{
+	border-color: red;
+	border-width:2px;
+}
+
+.gBorder{
+	border-color: green;
+	border-width:2px;
+}
+
+/**label状态颜色*/
+.type-hint {
+    display: inline-block;
+    margin-right:5px;
+}
+
+.type-hint-object {
+    background: #00c0ef;
+}
+
+.type-hint-function {
+    background: #00a65a;
+}
+
+/** 上传动态进度条 样式 start **/
+ul.mailbox-attachments >li{
+	position:relative;
+}
+.progressArea{
+	background:#D4E1F2;
+	border-top:1px solid #99BBE8;
+	height:100%; 
+	width:100%; 
+	display:none;
+	position:absolute; 
+	top:0; 
+	filter: alpha(opacity=30); 
+	background: rgba(60,141,188, 0.3);
+}
+.progressArea >.progressBar{
+  		height: 100%;
+  		width:100%;
+  		opacity:0.7;
+}
+.progressArea>.progressBar >.progressCanvas{
+   
+}
+.mailbox-attachment-size {
+    color: #999;
+    font-size: 12px;
+    position: relative;
+}
+/** 上传动态进度条 样式 end **/
+
+/** 自定义logo相关样式 start**/
+/** 修改文件上传样式**/
+.file {
+    position: relative;
+    display: inline-block;
+    background: #D0EEFF;
+    border: 1px solid #99D3F5;
+    border-radius: 4px;
+    padding: 4px 12px;
+    overflow: hidden;
+    color: #1E88C7;
+    text-decoration: none;
+    text-indent: 0;
+    line-height: 20px;
+}
+.file input {
+    position: absolute;
+    font-size: 100px;
+    right: 0;
+    top: 0;
+    opacity: 0;
+}
+.file:hover {
+    background: #AADFFD;
+    border-color: #78C3F3;
+    color: #004974;
+    text-decoration: none;
+}
+/** 图片裁剪相关样式**/
+.avatar-wrapper {
+  height: 364px;
+  width: 100%;
+  margin-top: 15px;
+  box-shadow: inset 0 0 5px rgba(0,0,0,.25);
+  background-color: #fcfcfc;
+  overflow: hidden;
+}
+
+.avatar-wrapper img {
+  display: block;
+  height: auto;
+  max-width: 100%;
+}
+
+
+
+/** 自定义logo相关样式 end**/
+
+/**自定义代理费样式**/
+
+.agencyDivCss button{
+	margin-left:10px;
+}

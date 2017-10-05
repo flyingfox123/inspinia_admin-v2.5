@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link href="gscss/ionicons.min.css" rel="stylesheet">
+		<link href="gscss/select2.css" rel="stylesheet">
+		<link href="gscss/select2-bootstrap.css" rel="stylesheet">
+		<link href="gscss/datepicker3.css" rel="stylesheet">
+		<link href="gscss/all.css" rel="stylesheet">
+		<link href="gscss/blue.css" rel="stylesheet">
+		<link href="gscss/daterangepicker-bs3.css" rel="stylesheet">
+		<link href="gscss/AdminLTE.css" rel="stylesheet">
+		<link href="gscss/skin-blue.min.css" rel="stylesheet">
+		<link href="gscss/skin-black.min.css" rel="stylesheet">
+		<link href="gscss/skin-green.min.css" rel="stylesheet">
+		<link href="gscss/skin-purple.min.css" rel="stylesheet">
+		<link href="gscss/skin-red.min.css" rel="stylesheet">
+		<link href="gscss/skin-yellow.min.css" rel="stylesheet">
+		<link href="gscss/common.css" rel="stylesheet">
+		<link href="gscss/jquery.growl.css" rel="stylesheet">
+		<link href="gscss/jsgrid.css" rel="stylesheet">
+		<link href="gscss/polaris.css" rel="stylesheet">
+		<link href="gscss/icheck/flat/_all.css" rel="stylesheet">
+		<link href="gscss/icheck/line/_all.css" rel="stylesheet">
+		<link href="gscss/icheck/minimal/_all.css" rel="stylesheet">
+		<link href="gscss/icheck/square/_all.css" rel="stylesheet">
+</head>
+<body>
+
+	
+	<div class="box box-solid">
+		<div class="box-body">
+			
+			<div class="box box-warning">
+	            <div class="box-header with-border">
+	              <h3 class="box-title">车辆资料</h3>
+	            </div>
+	            <div class="box-body">
+	            	
+	            	<table class="table">
+		                <tbody>
+		                  </tbody><thead>
+		                	<tr>
+		                      <th style="width:100px;">车牌号:</th>
+		                      <th>
+		                      	鲁A7366N
+		                      </th>
+		                      <th style="width:100px;">当前司机:</th>
+		                      <th>  </th>
+		                      <th style="width:100px;">联系电话:</th>
+		                      <th>186****7917</th>
+		                      <th style="width:100px;">注册时间:</th>
+		                      <th>2017-09-21 22:25</th>
+		                    </tr>
+		                  </thead>
+		                  <tbody><tr>
+		                    <td>车型:</td>
+		                    <td>
+		                    	 
+		                    </td>
+		                    <td>状态:</td>
+		                    <td>
+		                    	<span class="label bg-yellow">待注册</span>
+		                    </td>
+		                    <td colspan="4">&nbsp;</td>
+		                    
+		                  </tr>
+		                  <tr>
+		                    <td>常跑城市:</td>
+		                    <td colspan="7">
+		                    </td>
+		                  </tr>
+		                </tbody>
+		           </table>
+	            	
+	            </div><!-- /.box-body -->
+	            
+	            <div class="box-footer">
+                  &nbsp;
+                </div><!-- /.box-footer -->
+	          </div>
+          
+          	<div class="box box-success">
+	            <div class="box-header with-border">
+	              <h3 class="box-title">证件信息</h3>
+	            </div>
+	            <div class="box-body">
+	                	暂无
+	            </div><!-- /.box-body -->
+	            
+	            <div class="box-footer">
+                  &nbsp;
+                </div><!-- /.box-footer -->
+	        </div>
+          	
+          	<div class="box box-primary">
+	            <div class="box-header with-border">
+	              <h3 class="box-title">驾驶员</h3>
+	            </div>
+	            <div class="box-body">
+	              
+	              <table class="table table-striped">             
+	              	<thead>
+	              		<tr>
+							<th style="width: 10px">#</th>
+							<th>司机姓名</th>
+							<th>联系电话</th>
+							<th>注册日期</th>
+							<th>备注</th>
+						</tr>
+					</thead>
+					<tbody>
+	                    		<tr>
+									<td>1</td>
+									<td></td>
+									<td>186****7917</td>
+									<td>2017-09-21 22:25</td>
+									<td>认证失败</td>
+								</tr>
+					</tbody>   
+	              </table>
+	              
+	            </div><!-- /.box-body -->
+	            
+	            <div class="box-footer">
+                  &nbsp;
+                </div><!-- /.box-footer -->
+	        </div>
+	        
+	        <div class="box box-info">
+	            <div class="box-header with-border">
+	              <h3 class="box-title">诚信信息</h3>
+	            </div>
+	            <div class="box-body">
+	              <table class="table">
+		                <tbody>
+		                  <tr>
+		                    <td>诚信等级:</td>
+		                    <td>
+		                    	<span id="vhcCredit">
+		                    	<img src="/static/images/star-off-big.png" height="15"><img src="/static/images/star-off-big.png" height="15"><img src="/static/images/star-off-big.png" height="15"><img src="/static/images/star-off-big.png" height="15"><img src="/static/images/star-off-big.png" height="15"></span>
+		                    </td>
+		                    <td>VIP等级:</td>
+		                    <td>
+		                    	<span id="vip">
+		                    	<img src="/static/images/heart.png" width="24" height="24"></span>
+		                    </td>
+		                    <td colspan="4"></td>
+		                  </tr>
+		                  <tr>
+		                  	<td colspan="4" id="vhcCreditDetail">
+		                  	<table style="border-collapse: separate; border-spacing: 15px;">                                           <tbody><tr>                  <td>                   提货及时性：                  </td>                  <td>                  <span id="kpi_提货及时性">                  <img src="/static/images/star-off-big.png" height="15"><img src="/static/images/star-off-big.png" height="15"><img src="/static/images/star-off-big.png" height="15"><img src="/static/images/star-off-big.png" height="15"><img src="/static/images/star-off-big.png" height="15"></span>                  </td>                  <td>                                      <span class="label label-success">低于</span>                                      行业标准&nbsp;&nbsp;&nbsp;100.0%                  </td>                 </tr>                               <tr>                  <td>                   到货及时性：                  </td>                  <td>                  <span id="kpi_到货及时性">                  <img src="/static/images/star-off-big.png" height="15"><img src="/static/images/star-off-big.png" height="15"><img src="/static/images/star-off-big.png" height="15"><img src="/static/images/star-off-big.png" height="15"><img src="/static/images/star-off-big.png" height="15"></span>                  </td>                  <td>                                      <span class="label label-success">低于</span>                                      行业标准&nbsp;&nbsp;&nbsp;100.0%                  </td>                 </tr>                               <tr>                  <td>                   运输质量：                  </td>                  <td>                  <span id="kpi_运输质量">                  <img src="/static/images/star-off-big.png" height="15"><img src="/static/images/star-off-big.png" height="15"><img src="/static/images/star-off-big.png" height="15"><img src="/static/images/star-off-big.png" height="15"><img src="/static/images/star-off-big.png" height="15"></span>                  </td>                  <td>                                      <span class="label label-success">低于</span>                                      行业标准&nbsp;&nbsp;&nbsp;100.0%                  </td>                 </tr>                               <tr>                  <td>                   回单及时性：                  </td>                  <td>                  <span id="kpi_回单及时性">                  <img src="/static/images/star-off-big.png" height="15"><img src="/static/images/star-off-big.png" height="15"><img src="/static/images/star-off-big.png" height="15"><img src="/static/images/star-off-big.png" height="15"><img src="/static/images/star-off-big.png" height="15"></span>                  </td>                  <td>                                      <span class="label label-success">低于</span>                                      行业标准&nbsp;&nbsp;&nbsp;100.0%                  </td>                 </tr>                               <tr>                  <td>                   服务态度：                  </td>                  <td>                  <span id="kpi_服务态度">                  <img src="/static/images/star-off-big.png" height="15"><img src="/static/images/star-off-big.png" height="15"><img src="/static/images/star-off-big.png" height="15"><img src="/static/images/star-off-big.png" height="15"><img src="/static/images/star-off-big.png" height="15"></span>                  </td>                  <td>                                      <span class="label label-success">低于</span>                                      行业标准&nbsp;&nbsp;&nbsp;100.0%                  </td>                 </tr>                               <tr>                  <td>                   履约性：                  </td>                  <td>                  <span id="kpi_履约性">                  <img src="/static/images/star-off-big.png" height="15"><img src="/static/images/star-off-big.png" height="15"><img src="/static/images/star-off-big.png" height="15"><img src="/static/images/star-off-big.png" height="15"><img src="/static/images/star-off-big.png" height="15"></span>                  </td>                  <td>                                      <span class="label label-success">低于</span>                                      行业标准&nbsp;&nbsp;&nbsp;100.0%                  </td>                 </tr>                                    </tbody></table></td>
+		                  	<td colspan="4">
+		                  	</td>
+		                  </tr>
+		                </tbody>
+		           </table>
+	            </div><!-- /.box-body -->
+	            
+	            <div class="box-footer">
+                  &nbsp;
+                </div><!-- /.box-footer -->
+	        </div>
+	   		
+	        <div class="box box-default">
+	            <div class="box-header with-border">
+	              <h3 class="box-title">评价详情</h3>
+	            </div>
+	            <div class="box-body">
+		           <div id="modal_grid_shipper_comment" class="jsgrid" style="position: relative; height: 480px; width: 100%;"><div class="jsgrid-grid-header jsgrid-header-scrollbar"><table class="jsgrid-table"><tbody><tr class="jsgrid-header-row"><th style="width: 10px;" class="jsgrid-header-sortable">运单简情</th><th style="width: 25px;" class="jsgrid-header-sortable">满意程度</th><th style="width: 10px;" class="jsgrid-header-sortable">评价日期</th><th style="width: 10px;" class="jsgrid-header-sortable">备注</th></tr><tr class="jsgrid-filter-row" style="display: none;"><td style="width: 10px;"></td><td style="width: 26px;"></td><td style="width: 11px;"></td><td style="width: 11px;"></td></tr><tr class="jsgrid-insert-row" style="display: none;"><td style="width: 10px;"></td><td style="width: 26px;"></td><td style="width: 11px;"></td><td style="width: 11px;"></td></tr></tbody></table></div><div class="jsgrid-grid-body" style="height: 444px;"><table class="jsgrid-table" style="width: 1030px;"><tbody><tr class="jsgrid-nodata-row"><td colspan="4">无数据</td></tr></tbody></table></div><div class="jsgrid-pager-container" style="display: none;"></div><div class="jsgrid-load-shader" style="display: none; position: absolute; top: 0px; right: 0px; bottom: 0px; left: 0px; z-index: 1000;"></div><div class="jsgrid-load-panel" style="display: none; position: absolute; top: 50%; left: 50%; z-index: 1000;">载入中</div></div>
+				   <ul id="modal_grid_shipper_comment_pageBar" class="pagination"><li class="active"><a title="Current page is 1">1</a></li></ul>
+	            </div><!-- /.box-body -->
+	            
+	            <div class="box-footer">
+                  &nbsp;
+                </div><!-- /.box-footer -->
+	        </div>
+		</div>
+	</div>
+			
+</body>
+</html>
