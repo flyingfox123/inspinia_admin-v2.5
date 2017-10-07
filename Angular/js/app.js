@@ -78,6 +78,18 @@ var app = angular.module('myApp', [
                 url: '/mainLoginManage',
                 templateUrl:'system/loginManage.html'
             })
+               .state('main.goodsList', {
+                url: '/mainGoodsList',
+                templateUrl:'goods/goodsList.html'
+            })
+               .state('main.goodsPublish', {
+                url: '/mainGoodsPublish',
+                templateUrl:'goods/goodsPublish.html'
+            })
+                .state('main.orderList', {
+                url: '/mainOrderList',
+                templateUrl:'order/orderList.html'
+            })
                 ;
         // 设置默认页
         $urlRouterProvider.otherwise('/main');

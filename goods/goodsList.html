@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <!-- Mainly scripts -->
+        <script src="js/jquery-2.1.1.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
+        <script src="js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+        <!-- Custom and plugin javascript -->
+        <script src="js/inspinia.js"></script>
+        <script src="js/plugins/pace/pace.min.js"></script>
+        <!-- Data picker -->
+        <script src="js/plugins/datapicker/bootstrap-datepicker.js"></script>
+        <!-- FooTable -->
+        <script src="js/plugins/footable/footable.all.min.js"></script>
+        <!-- Page-Level Scripts -->
+        <script>
+        $(document).ready(function() {
+        $('.footable').footable();
+        $('#date_added').datepicker({
+        todayBtn: "linked",
+        keyboardNavigation: false,
+        forceParse: false,
+        calendarWeeks: true,
+        autoclose: true
+        });
+        $('#date_modified').datepicker({
+        todayBtn: "linked",
+        keyboardNavigation: false,
+        forceParse: false,
+        calendarWeeks: true,
+        autoclose: true
+        });
+        });
+        </script>
+    </head>
+    <body>
+        <div class="wrapper wrapper-content animated fadeInRight ecommerce">
+            <div class="ibox-content m-b-sm border-bottom">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <label class="control-label" for="order_id">出发地</label>
+                            <input type="text" id="order_id" name="order_id" value="" placeholder="出发地" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <label class="control-label" for="status">目的地</label>
+                            <input type="text" id="status" name="status" value="" placeholder="目的地" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-sm-2">
+                        <div class="form-group">
+                            <label class="control-label" for="customer">货物类型</label>
+                            <select name="status" id="status" class="form-control">
+                                530:                                                     <option value="1" selected="">不限</option>
+                                531:                                                     <option value="0">重货</option>
+                                531:                                                     <option value="0">泡货</option>
+                            532                                                  </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    
+                    <div class="col-sm-2">
+                        <div class="form-group">
+                            <label class="control-label" for="date_added">用车性质</label>
+                            <select name="status" id="status" class="form-control">
+                                530:                                                     <option value="1" selected="">不限</option>
+                                531:                                                     <option value="0">整车</option>
+                                531:                                                     <option value="0">零担</option>
+                            532                                                  </select>
+                        </div>
+                    </div>
+                    <div class="col-sm-2">
+                        <div class="form-group">
+                            <label class="control-label" for="date_modified">货源状态</label>
+                            <select name="status" id="status" class="form-control">
+                                530:                                                     <option value="1" selected="">不限</option>
+                                531:                                                     <option value="0">有效</option>
+                                531:                                                     <option value="0">已处理</option>
+                            532                                                  </select>
+                        </div>
+                    </div>
+                    
+                    
+                </div>
+                <div class="row" >
+                    <p>
+                        <button style="margin-left: 40%" type="button" class="btn btn-w-m btn-primary">查询</button>
+                    </p>
+                    
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="ibox">
+                        <div class="ibox-content" style="overflow: auto; overflow-y: hidden;">
+                            <div  style="overflow-y: auto; overflow-x: hidden; height: 600px; width: 2840px;">
+                            <table class="display table table-bordered table-striped " >
+                                <thead>
+                                    <tr>
+                                        <th>出发地</th>
+                                        <th data-hide="phone">目的地</th>
+                                        <th data-hide="phone">用车性质</th>
+                                        <th data-hide="phone">货物类型</th>
+                                        <th data-hide="phone,tablet" >货物名称</th>
+                                        <th data-hide="phone">货物重量</th>
+                                        <th class="text-right">货物体积</th>
+                                        <th class="text-right">时间要求</th>
+                                        <th class="text-right">车辆要求</th>
+                                        <th class="text-right">联系电话</th>
+                                        <th class="text-right">其它说明</th>
+                                        <th class="text-right">货源状态</th>
+                                        <th class="text-right">货物件数</th>
+                                        <th class="text-right">发货人</th>
+                                        <th class="text-right">收货人</th>
+                                        <th class="text-right">收货人电话</th>
+                                        <th class="text-right">发布时间</th>
+                                        <th class="text-right">失效时间</th>
+                                        <th class="text-right">信息来源</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>              <td style="width:260px" title="江苏省常州市江苏常州市溧阳市埭头镇">江苏省常州市江苏常州市溧阳市埭头镇</td>         <td style="width:260px" title="陕西省西安市陕西西安市莲湖区大庆路">陕西省西安市陕西西安市莲湖区大庆路</td>         <td>整车</td>         <td>重货</td>         <td title="电缆">电缆</td>         <td>30</td>         <td></td>         <td style="width:200px" title=""></td>         <td title="17.5米平板车">17.5米平板车</td>         <td>13382821690</td>         <td title=""></td>         <td><span class="label label-primary">未处理</span></td>         <td>1</td>         <td></td>         <td></td>         <td></td>         <td style="width:200px" title="2016-11-14 17:39:00">2016-11-14 17:39:00</td>         <td style="width:200px" title=""></td>         <td title="运满满">运满满</td>         </tr>
+                                    <tr>              <td style="width:260px" title="江苏省常州市江苏常州市溧阳市埭头镇">江苏省常州市江苏常州市溧阳市埭头镇</td>         <td style="width:260px" title="陕西省西安市陕西西安市莲湖区大庆路">陕西省西安市陕西西安市莲湖区大庆路</td>         <td>整车</td>         <td>重货</td>         <td title="电缆">电缆</td>         <td>30</td>         <td></td>         <td style="width:200px" title=""></td>         <td title="17.5米平板车">17.5米平板车</td>         <td>13382821690</td>         <td title=""></td>         <td><span class="label label-primary">未处理</span></td>         <td>1</td>         <td></td>         <td></td>         <td></td>         <td style="width:200px" title="2016-11-14 17:39:00">2016-11-14 17:39:00</td>         <td style="width:200px" title=""></td>         <td title="运满满">运满满</td>         </tr>
+                                    <tr>              <td style="width:260px" title="江苏省常州市江苏常州市溧阳市埭头镇">江苏省常州市江苏常州市溧阳市埭头镇</td>         <td style="width:260px" title="陕西省西安市陕西西安市莲湖区大庆路">陕西省西安市陕西西安市莲湖区大庆路</td>         <td>整车</td>         <td>重货</td>         <td title="电缆">电缆</td>         <td>30</td>         <td></td>         <td style="width:200px" title=""></td>         <td title="17.5米平板车">17.5米平板车</td>         <td>13382821690</td>         <td title=""></td>         <td><span class="label label-primary">未处理</span></td>         <td>1</td>         <td></td>         <td></td>         <td></td>         <td style="width:200px" title="2016-11-14 17:39:00">2016-11-14 17:39:00</td>         <td style="width:200px" title=""></td>         <td title="运满满">运满满</td>         </tr>
+                                    <tr>              <td style="width:260px" title="江苏省常州市江苏常州市溧阳市埭头镇">江苏省常州市江苏常州市溧阳市埭头镇</td>         <td style="width:260px" title="陕西省西安市陕西西安市莲湖区大庆路">陕西省西安市陕西西安市莲湖区大庆路</td>         <td>整车</td>         <td>重货</td>         <td title="电缆">电缆</td>         <td>30</td>         <td></td>         <td style="width:200px" title=""></td>         <td title="17.5米平板车">17.5米平板车</td>         <td>13382821690</td>         <td title=""></td>         <td><span class="label label-primary">未处理</span></td>         <td>1</td>         <td></td>         <td></td>         <td></td>         <td style="width:200px" title="2016-11-14 17:39:00">2016-11-14 17:39:00</td>         <td style="width:200px" title=""></td>         <td title="运满满">运满满</td>         </tr>
+                                    <tr>              <td style="width:260px" title="江苏省常州市江苏常州市溧阳市埭头镇">江苏省常州市江苏常州市溧阳市埭头镇</td>         <td style="width:260px" title="陕西省西安市陕西西安市莲湖区大庆路">陕西省西安市陕西西安市莲湖区大庆路</td>         <td>整车</td>         <td>重货</td>         <td title="电缆">电缆</td>         <td>30</td>         <td></td>         <td style="width:200px" title=""></td>         <td title="17.5米平板车">17.5米平板车</td>         <td>13382821690</td>         <td title=""></td>         <td><span class="label label-primary">未处理</span></td>         <td>1</td>         <td></td>         <td></td>         <td></td>         <td style="width:200px" title="2016-11-14 17:39:00">2016-11-14 17:39:00</td>         <td style="width:200px" title=""></td>         <td title="运满满">运满满</td>         </tr>
+                                    <tr>              <td style="width:260px" title="江苏省常州市江苏常州市溧阳市埭头镇">江苏省常州市江苏常州市溧阳市埭头镇</td>         <td style="width:260px" title="陕西省西安市陕西西安市莲湖区大庆路">陕西省西安市陕西西安市莲湖区大庆路</td>         <td>整车</td>         <td>重货</td>         <td title="电缆">电缆</td>         <td>30</td>         <td></td>         <td style="width:200px" title=""></td>         <td title="17.5米平板车">17.5米平板车</td>         <td>13382821690</td>         <td title=""></td>         <td><span class="label label-primary">未处理</span></td>         <td>1</td>         <td></td>         <td></td>         <td></td>         <td style="width:200px" title="2016-11-14 17:39:00">2016-11-14 17:39:00</td>         <td style="width:200px" title=""></td>         <td title="运满满">运满满</td>         </tr>
+                                    <tr>              <td style="width:260px" title="江苏省常州市江苏常州市溧阳市埭头镇">江苏省常州市江苏常州市溧阳市埭头镇</td>         <td style="width:260px" title="陕西省西安市陕西西安市莲湖区大庆路">陕西省西安市陕西西安市莲湖区大庆路</td>         <td>整车</td>         <td>重货</td>         <td title="电缆">电缆</td>         <td>30</td>         <td></td>         <td style="width:200px" title=""></td>         <td title="17.5米平板车">17.5米平板车</td>         <td>13382821690</td>         <td title=""></td>         <td><span class="label label-primary">未处理</span></td>         <td>1</td>         <td></td>         <td></td>         <td></td>         <td style="width:200px" title="2016-11-14 17:39:00">2016-11-14 17:39:00</td>         <td style="width:200px" title=""></td>         <td title="运满满">运满满</td>         </tr>
+                                    <tr>              <td style="width:260px" title="江苏省常州市江苏常州市溧阳市埭头镇">江苏省常州市江苏常州市溧阳市埭头镇</td>         <td style="width:260px" title="陕西省西安市陕西西安市莲湖区大庆路">陕西省西安市陕西西安市莲湖区大庆路</td>         <td>整车</td>         <td>重货</td>         <td title="电缆">电缆</td>         <td>30</td>         <td></td>         <td style="width:200px" title=""></td>         <td title="17.5米平板车">17.5米平板车</td>         <td>13382821690</td>         <td title=""></td>         <td><span class="label label-primary">未处理</span></td>         <td>1</td>         <td></td>         <td></td>         <td></td>         <td style="width:200px" title="2016-11-14 17:39:00">2016-11-14 17:39:00</td>         <td style="width:200px" title=""></td>         <td title="运满满">运满满</td>         </tr>
+                                    <tr>              <td style="width:260px" title="江苏省常州市江苏常州市溧阳市埭头镇">江苏省常州市江苏常州市溧阳市埭头镇</td>         <td style="width:260px" title="陕西省西安市陕西西安市莲湖区大庆路">陕西省西安市陕西西安市莲湖区大庆路</td>         <td>整车</td>         <td>重货</td>         <td title="电缆">电缆</td>         <td>30</td>         <td></td>         <td style="width:200px" title=""></td>         <td title="17.5米平板车">17.5米平板车</td>         <td>13382821690</td>         <td title=""></td>         <td><span class="label label-primary">未处理</span></td>         <td>1</td>         <td></td>         <td></td>         <td></td>         <td style="width:200px" title="2016-11-14 17:39:00">2016-11-14 17:39:00</td>         <td style="width:200px" title=""></td>         <td title="运满满">运满满</td>         </tr>
+                                    <tr>              <td style="width:260px" title="江苏省常州市江苏常州市溧阳市埭头镇">江苏省常州市江苏常州市溧阳市埭头镇</td>         <td style="width:260px" title="陕西省西安市陕西西安市莲湖区大庆路">陕西省西安市陕西西安市莲湖区大庆路</td>         <td>整车</td>         <td>重货</td>         <td title="电缆">电缆</td>         <td>30</td>         <td></td>         <td style="width:200px" title=""></td>         <td title="17.5米平板车">17.5米平板车</td>         <td>13382821690</td>         <td title=""></td>         <td><span class="label label-primary">未处理</span></td>         <td>1</td>         <td></td>         <td></td>         <td></td>         <td style="width:200px" title="2016-11-14 17:39:00">2016-11-14 17:39:00</td>         <td style="width:200px" title=""></td>         <td title="运满满">运满满</td>         </tr>
+                                    <tr>              <td style="width:260px" title="江苏省常州市江苏常州市溧阳市埭头镇">江苏省常州市江苏常州市溧阳市埭头镇</td>         <td style="width:260px" title="陕西省西安市陕西西安市莲湖区大庆路">陕西省西安市陕西西安市莲湖区大庆路</td>         <td>整车</td>         <td>重货</td>         <td title="电缆">电缆</td>         <td>30</td>         <td></td>         <td style="width:200px" title=""></td>         <td title="17.5米平板车">17.5米平板车</td>         <td>13382821690</td>         <td title=""></td>         <td><span class="label label-primary">未处理</span></td>         <td>1</td>         <td></td>         <td></td>         <td></td>         <td style="width:200px" title="2016-11-14 17:39:00">2016-11-14 17:39:00</td>         <td style="width:200px" title=""></td>         <td title="运满满">运满满</td>         </tr>
+                                    <tr>              <td style="width:260px" title="江苏省常州市江苏常州市溧阳市埭头镇">江苏省常州市江苏常州市溧阳市埭头镇</td>         <td style="width:260px" title="陕西省西安市陕西西安市莲湖区大庆路">陕西省西安市陕西西安市莲湖区大庆路</td>         <td>整车</td>         <td>重货</td>         <td title="电缆">电缆</td>         <td>30</td>         <td></td>         <td style="width:200px" title=""></td>         <td title="17.5米平板车">17.5米平板车</td>         <td>13382821690</td>         <td title=""></td>         <td><span class="label label-primary">未处理</span></td>         <td>1</td>         <td></td>         <td></td>         <td></td>         <td style="width:200px" title="2016-11-14 17:39:00">2016-11-14 17:39:00</td>         <td style="width:200px" title=""></td>         <td title="运满满">运满满</td>         </tr>
+
+                                </tbody>
+                                <tfoot>
+                                <tr>
+                                    <td colspan="19">
+                                    <ul class="pagination pull-right"></ul>
+                                </td>
+                            </tr>
+                            </tfoot>
+                        </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
