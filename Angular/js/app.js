@@ -80,11 +80,16 @@ var app = angular.module('myApp', [
             })
                .state('main.goodsList', {
                 url: '/mainGoodsList',
-                templateUrl:'goods/goodsList.html'
+                templateUrl:'goods/goodsList.html',
+                controller:'goodsListCtrl'
             })
                .state('main.goodsPublish', {
                 url: '/mainGoodsPublish',
                 templateUrl:'goods/goodsPublish.html'
+            })
+               .state('main.goodsDetail', {
+                url: '/mainGoodsDetail',
+                templateUrl:'goods/goodsDetail.html'
             })
                 .state('main.orderList', {
                 url: '/mainOrderList',

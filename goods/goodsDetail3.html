@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+		<link href="llcss/common.css" rel="stylesheet">
+		<link href="llcss/layer.css" rel="stylesheet">
+		<link href="llcss/city-picker.css" rel="stylesheet">
+		<link href="llcss/skin.css" rel="stylesheet">
+		<link href="llcss/laydate.css" rel="stylesheet">
+		<link href="llcss/laydate-1.css" rel="stylesheet">
+		<script src="lljs/kkpager.min.js"></script>
+		<script src="lljs/city-picker.data.js"></script>
+		<script src="lljs/city-picker.js"></script>
+		<script src="lljs/llmjPlaceOrder.js"></script>
+		<script src="lljs/jquery.cookie.js"></script>
+		<script src="lljs/jquery.min.js"></script>
+	</head>
+	<body >
+		<div class="m-itemDet clearfix" id="hasRobbed" style="width: 300px">
+					<div class="u-pPoint u-pPoint2 fl myMsg" style="padding-top:7px;padding-bottom:7px;width: 800px;margin-left: 40px">
+						河南省郑州市到 河南省郑州市，有食品3吨，求7.2米-9.6米的冷藏车，价格650元，回单支付,发货人余待永
+					</div>
+
+                             <div class="clearfix fr zc-positon" id="robOrder" style="margin-left: 45%">
+						
+							<a href="javascript:;" class="fr u-aNext u-aNextF" style="margin-bottom: 10px;" ng-click="jd()">接单</a>
+					</div>
+
+
+				</div>
+
+		<div class="m-inforDet clearfix">
+			<div class="c-inforHeight">
+				<div class="c-inforTit fl ">
+					
+					<dl class="u-inforHd">
+						<dt><img src="http://misc.lenglianmajia.com/img/s7.png" alt=""></dt>
+						<dd>货源详情</dd>
+					</dl>
+					<ul class="u-inforUl">
+						<li class="clearfix"><a>货物品类:</a><span>肉类</span></li>
+						<li class="clearfix"><a>货物名称:</a><span>鲜品</span></li>
+						<li class="clearfix"><a>货物类型:</a><span>冷藏</span></li>
+						<li class="clearfix"><a>温度要求:</a><span>0~4℃</span></li>
+						<li class="clearfix"><a>货物规格:</a><span>6.52吨 </span></li>
+						<li class="clearfix"><a>需要车长:</a><span>4.2米-7.2米</span></li>
+						<li class="clearfix"><a>需要的车辆类型:</a><span>冷藏车</span></li>
+						<li class="clearfix"><a>运输费用:</a><span>2,333元</span></li>
+						<li class="clearfix"><a>支付方式:</a><span>回单支付</span></li>
+						<li class="clearfix"><a>是否需要发票:</a><span>否</span></li>
+					</ul>
+				</div>
+				<div class="c-inforTit fl u-ulBorder">
+					<dl class="u-inforHd">
+						<dt><img src="http://misc.lenglianmajia.com/img/s8.png" alt=""></dt>
+						<dd>配送信息</dd>
+					</dl>
+					<ul class="u-inforUl ">
+						<li class="clearfix"><a>始发地:</a><span>吉林省长春市市辖区</span></li>
+						<li class="clearfix"><a>目的地:</a><span>吉林省长春市市辖区</span></li>
+						<li class="clearfix"><a>装车时间:</a><span>2017-01-03——2017-01-03</span></li>
+						<li class="clearfix"><a>到货时间:</a><span>2017-01-04——2017-01-04</span></li>
+					</ul>
+				</div>
+				<div class="c-inforTit fr ">
+					<dl class="u-inforHd">
+						<dt><img src="http://misc.lenglianmajia.com/img/s9.png" alt=""></dt>
+						<dd>联系方式</dd>
+					</dl>
+					<ul class="u-inforUl">
+						<li class="clearfix"><a>发货人:</a><span>长春众品食业有限公司</span></li>
+						<li class="clearfix">
+							<a>联系方式:</a>
+							<span id="phone">认证后可见</span>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="modal-footer">
+			<button class="btn btn-warning" ng-click="cancel()">取消</button>
+		</div>
+	</body>
+</html>

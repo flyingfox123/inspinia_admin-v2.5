@@ -1,0 +1,62 @@
+
+.skin-table{
+    float: left;
+    width:304px;
+    height: 508px;
+    background: #fcfcfc;
+    border-bottom: 1px solid #ccc;
+    -moz-box-shadow: 0 1px 2px #ccc;
+    -webkit-box-shadow: 0 1px 2px #ccc;
+    box-shadow: 0 1px 2px #ccc;
+    padding:22px 28px 16px;
+    position: relative;
+    margin-left: 30px;
+    margin-bottom: 30px;
+}
+.skin-table1{
+    height: 436px;
+}
+.skin-table:hover{
+    -moz-box-shadow: 0 1px 34px #ccc;
+    -webkit-box-shadow: 0 1px 34px #ccc;
+    box-shadow: 0 1px 34px #ccc;
+}
+.skin-divFist p{
+    width:282px;
+}
+.skin strong{
+    font-weight: normal;
+    color:#999;
+}
+.skin p{
+    color:#333;
+}
+.skin .czh-posi{
+    width:200px;
+}
+.bor-bom{
+    padding:14px 0;
+    border-bottom:1px dashed #cfd5e1;
+}
+.skin .czh-posi img{
+   margin-top:2px;
+}
+.sikn-divList{
+    position: absolute;
+    bottom:30px;
+    right:24px;
+}
+.skin .i-img{
+    margin: 38px 8px 0 0;
+}
+.skin-strong1{
+    margin-left: -20px;
+}
+.skin .dj-xq {
+    top: 10px;
+    left: 60px;
+}
+.skin .pho {
+    top: 14px;
+    left: 168px;
+}

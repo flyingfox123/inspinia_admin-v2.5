@@ -42,7 +42,7 @@ body {
 	vertical-align: middle;
 }
 
-.skin-blue .navbar-nav .gshmenu{
+/*.skin-blue .navbar-nav .gshmenu{
 	border-left:1px solid #367FAA;
 }
 
@@ -60,7 +60,7 @@ body {
 
 .skin-black .navbar-nav li:last-child{
 	border-right:1px solid #FAFAFA;
-}
+}*/
 /**
 .skin-red .navbar-nav .gshmenu{
 	border-left:1px solid #DD4B39;
@@ -86,7 +86,7 @@ body {
 	border-right:1px solid #00A65A;
 }
 **/
-.navbar-nav .gshmenu{
+/*.navbar-nav .gshmenu{
 	margin-right:0px;
 	font-size:15px;
 }
@@ -99,7 +99,7 @@ body {
 
 .navbar-nav .gshmenu-act a{
 	color: #333;
-}
+}*/
 
 
 .quick-gif{

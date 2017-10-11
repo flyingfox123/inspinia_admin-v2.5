@@ -2,155 +2,1386 @@
 <html>
     <head>
         <title></title>
-        <!-- Mainly scripts -->
-        <script src="js/jquery-2.1.1.js"></script>
-        <script src="js/bootstrap.min.js"></script>
-        <script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
-        <script src="js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
-        <!-- Custom and plugin javascript -->
-        <script src="js/inspinia.js"></script>
-        <script src="js/plugins/pace/pace.min.js"></script>
-        <!-- Data picker -->
-        <script src="js/plugins/datapicker/bootstrap-datepicker.js"></script>
-        <!-- FooTable -->
-        <script src="js/plugins/footable/footable.all.min.js"></script>
-        <!-- Page-Level Scripts -->
-        <script>
-        $(document).ready(function() {
-        $('.footable').footable();
-        $('#date_added').datepicker({
-        todayBtn: "linked",
-        keyboardNavigation: false,
-        forceParse: false,
-        calendarWeeks: true,
-        autoclose: true
-        });
-        $('#date_modified').datepicker({
-        todayBtn: "linked",
-        keyboardNavigation: false,
-        forceParse: false,
-        calendarWeeks: true,
-        autoclose: true
-        });
-        });
-        </script>
+ <link href="llcss/common.css" rel="stylesheet">
+ <link href="llcss/layer.css" rel="stylesheet">
+ <link href="llcss/city-picker.css" rel="stylesheet">
+ <link href="llcss/skin.css" rel="stylesheet">
+ <link href="llcss/laydate.css" rel="stylesheet">
+ <link href="llcss/laydate-1.css" rel="stylesheet">
+
+         <script src="lljs/kkpager.min.js"></script>
+         <script src="lljs/city-picker.data.js"></script>
+         <script src="lljs/city-picker.js"></script>
+         <script src="lljs/llmjPlaceOrder.js"></script>
+         <script src="lljs/common.js"></script>
+         <script src="lljs/jquery.cookie.js"></script>
+         <script src="lljs/jquery.min.js"></script>
+
     </head>
     <body>
-        <div class="wrapper wrapper-content animated fadeInRight ecommerce">
-            <div class="ibox-content m-b-sm border-bottom">
-                <div class="row">
-                    <div class="col-sm-4">
-                        <div class="form-group">
-                            <label class="control-label" for="order_id">出发地</label>
-                            <input type="text" id="order_id" name="order_id" value="" placeholder="出发地" class="form-control">
+        
+                    <div class="m-infonavContent ">
+                    <div class="m-inforForm clearfix">
+                        <div class="clearfix fl m30">
+                            <p class="fl">始发地：</p>
+                            <div id="distpicker" class="fl">
+                                <div class="form-group">
+                                    <div style="position: relative;">
+                                        <input id="fromId" class="form-control city-picker-input" readonly="" value="" data-toggle="city-picker" autocomplete="off" type="text"><span class="city-picker-span ellipsis" style="width:176px;height:36px;line-height:36px;"><span class="placeholder">请选择省/市/区</span><span class="title" style="display: none;"></span><div class="arrow"></div></span><div class="city-picker-dropdown" style="left:0px;top:100%;width:320px;"><div class="city-select-wrap"><div class="city-select-tab"><a class="active" data-count="province">省份</a><a data-count="city">城市</a><a data-count="district">区县</a><div class="form-btn"><button class="btn btn-warning" id="resetClear" type="button">重置</button><button class="btn btn-danger" id="destroy" type="button">确定</button></div></div><div class="city-select-content"><div class="city-select province" data-count="province" style="display: block;"><dl class="clearfix"><dt>A-G</dt><dd><a title="安徽省" data-code="13" class="">安徽省</a><a title="北京市" data-code="2" class="">北京市</a><a title="重庆市" data-code="23" class="">重庆市</a><a title="福建省" data-code="14" class="">福建省</a><a title="甘肃省" data-code="29" class="">甘肃省</a><a title="广东省" data-code="20" class="">广东省</a><a title="广西壮族自治区" data-code="21" class="">广西壮族自治区</a><a title="贵州省" data-code="25" class="">贵州省</a></dd></dl><dl class="clearfix"><dt>H-K</dt><dd><a title="海南省" data-code="22" class="">海南省</a><a title="河北省" data-code="4" class="">河北省</a><a title="黑龙江省" data-code="9" class="">黑龙江省</a><a title="河南省" data-code="17" class="">河南省</a><a title="湖北省" data-code="18" class="">湖北省</a><a title="湖南省" data-code="19" class="">湖南省</a><a title="江苏省" data-code="11" class="">江苏省</a><a title="江西省" data-code="15" class="">江西省</a><a title="吉林省" data-code="8" class="">吉林省</a></dd></dl><dl class="clearfix"><dt>L-S</dt><dd><a title="辽宁省" data-code="7" class="">辽宁省</a><a title="内蒙古自治区" data-code="6" class="">内蒙古自治区</a><a title="宁夏回族自治区" data-code="31" class="">宁夏回族自治区</a><a title="青海省" data-code="30" class="">青海省</a><a title="山东省" data-code="16" class="">山东省</a><a title="上海市" data-code="10" class="">上海市</a><a title="山西省" data-code="5" class="">山西省</a><a title="陕西省" data-code="28" class="">陕西省</a><a title="四川省" data-code="24" class="">四川省</a></dd></dl><dl class="clearfix"><dt>T-Z</dt><dd><a title="天津市" data-code="3" class="">天津市</a><a title="新疆维吾尔自治区" data-code="32" class="">新疆维吾尔自治区</a><a title="西藏自治区" data-code="27" class="">西藏自治区</a><a title="云南省" data-code="26" class="">云南省</a><a title="浙江省" data-code="12" class="">浙江省</a></dd></dl></div><div class="city-select city" data-count="city" style="display: none;"><dl class="clearfix"><dd></dd></dl></div><div class="city-select district" data-count="district" style="display: none;"><dl class="clearfix"><dd></dd></dl></div></div></div></div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-sm-4">
-                        <div class="form-group">
-                            <label class="control-label" for="status">目的地</label>
-                            <input type="text" id="status" name="status" value="" placeholder="目的地" class="form-control">
+                        <div class="clearfix fl">
+                            <p class="fl">目的地：</p>
+                            <div id="distpicker" class="fl">
+                                <div class="form-group">
+                                    <div style="position: relative;">
+                                        <input id="toId" class="form-control city-picker-input" readonly="" value="" data-toggle="city-picker" autocomplete="off" type="text"><span class="city-picker-span ellipsis" style="width:176px;height:36px;line-height:36px;"><span class="placeholder">请选择省/市/区</span><span class="title" style="display: none;"></span><div class="arrow"></div></span><div class="city-picker-dropdown" style="left:0px;top:100%;width:320px;"><div class="city-select-wrap"><div class="city-select-tab"><a class="active" data-count="province">省份</a><a data-count="city">城市</a><a data-count="district">区县</a><div class="form-btn"><button class="btn btn-warning" id="resetClear" type="button">重置</button><button class="btn btn-danger" id="destroy" type="button">确定</button></div></div><div class="city-select-content"><div class="city-select province" data-count="province" style="display: block;"><dl class="clearfix"><dt>A-G</dt><dd><a title="安徽省" data-code="13" class="">安徽省</a><a title="北京市" data-code="2" class="">北京市</a><a title="重庆市" data-code="23" class="">重庆市</a><a title="福建省" data-code="14" class="">福建省</a><a title="甘肃省" data-code="29" class="">甘肃省</a><a title="广东省" data-code="20" class="">广东省</a><a title="广西壮族自治区" data-code="21" class="">广西壮族自治区</a><a title="贵州省" data-code="25" class="">贵州省</a></dd></dl><dl class="clearfix"><dt>H-K</dt><dd><a title="海南省" data-code="22" class="">海南省</a><a title="河北省" data-code="4" class="">河北省</a><a title="黑龙江省" data-code="9" class="">黑龙江省</a><a title="河南省" data-code="17" class="">河南省</a><a title="湖北省" data-code="18" class="">湖北省</a><a title="湖南省" data-code="19" class="">湖南省</a><a title="江苏省" data-code="11" class="">江苏省</a><a title="江西省" data-code="15" class="">江西省</a><a title="吉林省" data-code="8" class="">吉林省</a></dd></dl><dl class="clearfix"><dt>L-S</dt><dd><a title="辽宁省" data-code="7" class="">辽宁省</a><a title="内蒙古自治区" data-code="6" class="">内蒙古自治区</a><a title="宁夏回族自治区" data-code="31" class="">宁夏回族自治区</a><a title="青海省" data-code="30" class="">青海省</a><a title="山东省" data-code="16" class="">山东省</a><a title="上海市" data-code="10" class="">上海市</a><a title="山西省" data-code="5" class="">山西省</a><a title="陕西省" data-code="28" class="">陕西省</a><a title="四川省" data-code="24" class="">四川省</a></dd></dl><dl class="clearfix"><dt>T-Z</dt><dd><a title="天津市" data-code="3" class="">天津市</a><a title="新疆维吾尔自治区" data-code="32" class="">新疆维吾尔自治区</a><a title="西藏自治区" data-code="27" class="">西藏自治区</a><a title="云南省" data-code="26" class="">云南省</a><a title="浙江省" data-code="12" class="">浙江省</a></dd></dl></div><div class="city-select city" data-count="city" style="display: none;"><dl class="clearfix"><dd></dd></dl></div><div class="city-select district" data-count="district" style="display: none;"><dl class="clearfix"><dd></dd></dl></div></div></div></div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-sm-2">
-                        <div class="form-group">
-                            <label class="control-label" for="customer">货物类型</label>
-                            <select name="status" id="status" class="form-control">
-                                530:                                                     <option value="1" selected="">不限</option>
-                                531:                                                     <option value="0">重货</option>
-                                531:                                                     <option value="0">泡货</option>
-                            532                                                  </select>
+                        <div class="clearfix">
+                        <a href="javascript:;" class="fl u-aNext u-aNext1" onclick="queryGoodsLine(1)"><i class="mjFont f14" style="color:#fff;"></i>搜索</a>
+                        <a href="javascript:;" class="fl u-moreSerch">更多筛选条件<i class="mjFont"></i></a>
                         </div>
-                    </div>
-                </div>
-                <div class="row">
-                    
-                    <div class="col-sm-2">
-                        <div class="form-group">
-                            <label class="control-label" for="date_added">用车性质</label>
-                            <select name="status" id="status" class="form-control">
-                                530:                                                     <option value="1" selected="">不限</option>
-                                531:                                                     <option value="0">整车</option>
-                                531:                                                     <option value="0">零担</option>
-                            532                                                  </select>
-                        </div>
-                    </div>
-                    <div class="col-sm-2">
-                        <div class="form-group">
-                            <label class="control-label" for="date_modified">货源状态</label>
-                            <select name="status" id="status" class="form-control">
-                                530:                                                     <option value="1" selected="">不限</option>
-                                531:                                                     <option value="0">有效</option>
-                                531:                                                     <option value="0">已处理</option>
-                            532                                                  </select>
-                        </div>
-                    </div>
-                    
-                    
-                </div>
-                <div class="row" >
-                    <p>
-                        <button style="margin-left: 40%" type="button" class="btn btn-w-m btn-primary">查询</button>
-                    </p>
-                    
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="ibox">
-                        <div class="ibox-content" style="overflow: auto; overflow-y: hidden;">
-                            <div  style="overflow-y: auto; overflow-x: hidden; height: 600px; width: 2840px;">
-                            <table class="display table table-bordered table-striped " >
-                                <thead>
-                                    <tr>
-                                        <th>出发地</th>
-                                        <th data-hide="phone">目的地</th>
-                                        <th data-hide="phone">用车性质</th>
-                                        <th data-hide="phone">货物类型</th>
-                                        <th data-hide="phone,tablet" >货物名称</th>
-                                        <th data-hide="phone">货物重量</th>
-                                        <th class="text-right">货物体积</th>
-                                        <th class="text-right">时间要求</th>
-                                        <th class="text-right">车辆要求</th>
-                                        <th class="text-right">联系电话</th>
-                                        <th class="text-right">其它说明</th>
-                                        <th class="text-right">货源状态</th>
-                                        <th class="text-right">货物件数</th>
-                                        <th class="text-right">发货人</th>
-                                        <th class="text-right">收货人</th>
-                                        <th class="text-right">收货人电话</th>
-                                        <th class="text-right">发布时间</th>
-                                        <th class="text-right">失效时间</th>
-                                        <th class="text-right">信息来源</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>              <td style="width:260px" title="江苏省常州市江苏常州市溧阳市埭头镇">江苏省常州市江苏常州市溧阳市埭头镇</td>         <td style="width:260px" title="陕西省西安市陕西西安市莲湖区大庆路">陕西省西安市陕西西安市莲湖区大庆路</td>         <td>整车</td>         <td>重货</td>         <td title="电缆">电缆</td>         <td>30</td>         <td></td>         <td style="width:200px" title=""></td>         <td title="17.5米平板车">17.5米平板车</td>         <td>13382821690</td>         <td title=""></td>         <td><span class="label label-primary">未处理</span></td>         <td>1</td>         <td></td>         <td></td>         <td></td>         <td style="width:200px" title="2016-11-14 17:39:00">2016-11-14 17:39:00</td>         <td style="width:200px" title=""></td>         <td title="运满满">运满满</td>         </tr>
-                                    <tr>              <td style="width:260px" title="江苏省常州市江苏常州市溧阳市埭头镇">江苏省常州市江苏常州市溧阳市埭头镇</td>         <td style="width:260px" title="陕西省西安市陕西西安市莲湖区大庆路">陕西省西安市陕西西安市莲湖区大庆路</td>         <td>整车</td>         <td>重货</td>         <td title="电缆">电缆</td>         <td>30</td>         <td></td>         <td style="width:200px" title=""></td>         <td title="17.5米平板车">17.5米平板车</td>         <td>13382821690</td>         <td title=""></td>         <td><span class="label label-primary">未处理</span></td>         <td>1</td>         <td></td>         <td></td>         <td></td>         <td style="width:200px" title="2016-11-14 17:39:00">2016-11-14 17:39:00</td>         <td style="width:200px" title=""></td>         <td title="运满满">运满满</td>         </tr>
-                                    <tr>              <td style="width:260px" title="江苏省常州市江苏常州市溧阳市埭头镇">江苏省常州市江苏常州市溧阳市埭头镇</td>         <td style="width:260px" title="陕西省西安市陕西西安市莲湖区大庆路">陕西省西安市陕西西安市莲湖区大庆路</td>         <td>整车</td>         <td>重货</td>         <td title="电缆">电缆</td>         <td>30</td>         <td></td>         <td style="width:200px" title=""></td>         <td title="17.5米平板车">17.5米平板车</td>         <td>13382821690</td>         <td title=""></td>         <td><span class="label label-primary">未处理</span></td>         <td>1</td>         <td></td>         <td></td>         <td></td>         <td style="width:200px" title="2016-11-14 17:39:00">2016-11-14 17:39:00</td>         <td style="width:200px" title=""></td>         <td title="运满满">运满满</td>         </tr>
-                                    <tr>              <td style="width:260px" title="江苏省常州市江苏常州市溧阳市埭头镇">江苏省常州市江苏常州市溧阳市埭头镇</td>         <td style="width:260px" title="陕西省西安市陕西西安市莲湖区大庆路">陕西省西安市陕西西安市莲湖区大庆路</td>         <td>整车</td>         <td>重货</td>         <td title="电缆">电缆</td>         <td>30</td>         <td></td>         <td style="width:200px" title=""></td>         <td title="17.5米平板车">17.5米平板车</td>         <td>13382821690</td>         <td title=""></td>         <td><span class="label label-primary">未处理</span></td>         <td>1</td>         <td></td>         <td></td>         <td></td>         <td style="width:200px" title="2016-11-14 17:39:00">2016-11-14 17:39:00</td>         <td style="width:200px" title=""></td>         <td title="运满满">运满满</td>         </tr>
-                                    <tr>              <td style="width:260px" title="江苏省常州市江苏常州市溧阳市埭头镇">江苏省常州市江苏常州市溧阳市埭头镇</td>         <td style="width:260px" title="陕西省西安市陕西西安市莲湖区大庆路">陕西省西安市陕西西安市莲湖区大庆路</td>         <td>整车</td>         <td>重货</td>         <td title="电缆">电缆</td>         <td>30</td>         <td></td>         <td style="width:200px" title=""></td>         <td title="17.5米平板车">17.5米平板车</td>         <td>13382821690</td>         <td title=""></td>         <td><span class="label label-primary">未处理</span></td>         <td>1</td>         <td></td>         <td></td>         <td></td>         <td style="width:200px" title="2016-11-14 17:39:00">2016-11-14 17:39:00</td>         <td style="width:200px" title=""></td>         <td title="运满满">运满满</td>         </tr>
-                                    <tr>              <td style="width:260px" title="江苏省常州市江苏常州市溧阳市埭头镇">江苏省常州市江苏常州市溧阳市埭头镇</td>         <td style="width:260px" title="陕西省西安市陕西西安市莲湖区大庆路">陕西省西安市陕西西安市莲湖区大庆路</td>         <td>整车</td>         <td>重货</td>         <td title="电缆">电缆</td>         <td>30</td>         <td></td>         <td style="width:200px" title=""></td>         <td title="17.5米平板车">17.5米平板车</td>         <td>13382821690</td>         <td title=""></td>         <td><span class="label label-primary">未处理</span></td>         <td>1</td>         <td></td>         <td></td>         <td></td>         <td style="width:200px" title="2016-11-14 17:39:00">2016-11-14 17:39:00</td>         <td style="width:200px" title=""></td>         <td title="运满满">运满满</td>         </tr>
-                                    <tr>              <td style="width:260px" title="江苏省常州市江苏常州市溧阳市埭头镇">江苏省常州市江苏常州市溧阳市埭头镇</td>         <td style="width:260px" title="陕西省西安市陕西西安市莲湖区大庆路">陕西省西安市陕西西安市莲湖区大庆路</td>         <td>整车</td>         <td>重货</td>         <td title="电缆">电缆</td>         <td>30</td>         <td></td>         <td style="width:200px" title=""></td>         <td title="17.5米平板车">17.5米平板车</td>         <td>13382821690</td>         <td title=""></td>         <td><span class="label label-primary">未处理</span></td>         <td>1</td>         <td></td>         <td></td>         <td></td>         <td style="width:200px" title="2016-11-14 17:39:00">2016-11-14 17:39:00</td>         <td style="width:200px" title=""></td>         <td title="运满满">运满满</td>         </tr>
-                                    <tr>              <td style="width:260px" title="江苏省常州市江苏常州市溧阳市埭头镇">江苏省常州市江苏常州市溧阳市埭头镇</td>         <td style="width:260px" title="陕西省西安市陕西西安市莲湖区大庆路">陕西省西安市陕西西安市莲湖区大庆路</td>         <td>整车</td>         <td>重货</td>         <td title="电缆">电缆</td>         <td>30</td>         <td></td>         <td style="width:200px" title=""></td>         <td title="17.5米平板车">17.5米平板车</td>         <td>13382821690</td>         <td title=""></td>         <td><span class="label label-primary">未处理</span></td>         <td>1</td>         <td></td>         <td></td>         <td></td>         <td style="width:200px" title="2016-11-14 17:39:00">2016-11-14 17:39:00</td>         <td style="width:200px" title=""></td>         <td title="运满满">运满满</td>         </tr>
-                                    <tr>              <td style="width:260px" title="江苏省常州市江苏常州市溧阳市埭头镇">江苏省常州市江苏常州市溧阳市埭头镇</td>         <td style="width:260px" title="陕西省西安市陕西西安市莲湖区大庆路">陕西省西安市陕西西安市莲湖区大庆路</td>         <td>整车</td>         <td>重货</td>         <td title="电缆">电缆</td>         <td>30</td>         <td></td>         <td style="width:200px" title=""></td>         <td title="17.5米平板车">17.5米平板车</td>         <td>13382821690</td>         <td title=""></td>         <td><span class="label label-primary">未处理</span></td>         <td>1</td>         <td></td>         <td></td>         <td></td>         <td style="width:200px" title="2016-11-14 17:39:00">2016-11-14 17:39:00</td>         <td style="width:200px" title=""></td>         <td title="运满满">运满满</td>         </tr>
-                                    <tr>              <td style="width:260px" title="江苏省常州市江苏常州市溧阳市埭头镇">江苏省常州市江苏常州市溧阳市埭头镇</td>         <td style="width:260px" title="陕西省西安市陕西西安市莲湖区大庆路">陕西省西安市陕西西安市莲湖区大庆路</td>         <td>整车</td>         <td>重货</td>         <td title="电缆">电缆</td>         <td>30</td>         <td></td>         <td style="width:200px" title=""></td>         <td title="17.5米平板车">17.5米平板车</td>         <td>13382821690</td>         <td title=""></td>         <td><span class="label label-primary">未处理</span></td>         <td>1</td>         <td></td>         <td></td>         <td></td>         <td style="width:200px" title="2016-11-14 17:39:00">2016-11-14 17:39:00</td>         <td style="width:200px" title=""></td>         <td title="运满满">运满满</td>         </tr>
-                                    <tr>              <td style="width:260px" title="江苏省常州市江苏常州市溧阳市埭头镇">江苏省常州市江苏常州市溧阳市埭头镇</td>         <td style="width:260px" title="陕西省西安市陕西西安市莲湖区大庆路">陕西省西安市陕西西安市莲湖区大庆路</td>         <td>整车</td>         <td>重货</td>         <td title="电缆">电缆</td>         <td>30</td>         <td></td>         <td style="width:200px" title=""></td>         <td title="17.5米平板车">17.5米平板车</td>         <td>13382821690</td>         <td title=""></td>         <td><span class="label label-primary">未处理</span></td>         <td>1</td>         <td></td>         <td></td>         <td></td>         <td style="width:200px" title="2016-11-14 17:39:00">2016-11-14 17:39:00</td>         <td style="width:200px" title=""></td>         <td title="运满满">运满满</td>         </tr>
-                                    <tr>              <td style="width:260px" title="江苏省常州市江苏常州市溧阳市埭头镇">江苏省常州市江苏常州市溧阳市埭头镇</td>         <td style="width:260px" title="陕西省西安市陕西西安市莲湖区大庆路">陕西省西安市陕西西安市莲湖区大庆路</td>         <td>整车</td>         <td>重货</td>         <td title="电缆">电缆</td>         <td>30</td>         <td></td>         <td style="width:200px" title=""></td>         <td title="17.5米平板车">17.5米平板车</td>         <td>13382821690</td>         <td title=""></td>         <td><span class="label label-primary">未处理</span></td>         <td>1</td>         <td></td>         <td></td>         <td></td>         <td style="width:200px" title="2016-11-14 17:39:00">2016-11-14 17:39:00</td>         <td style="width:200px" title=""></td>         <td title="运满满">运满满</td>         </tr>
+                        
+                            <div class="m-bombBox122" style="display: none;">
+                        
+                        
+                        
+                       <div class="m-bottom clearfix ">
+                                <div class="c-bombLast clearfix fl m28">
+                                    <p class="fl">货物规格：</p>
+                                    <div class="mjFormSel fl index_sel" data-width="85">
+                                        <select name="goodsWeight" id="goodsWeight" class="bigInput select0 fl">
+                                            <option value="">不限</option>
 
-                                </tbody>
-                                <tfoot>
-                                <tr>
-                                    <td colspan="19">
-                                    <ul class="pagination pull-right"></ul>
-                                </td>
-                            </tr>
-                            </tfoot>
-                        </table>
+                                                    <option value="1">3吨以下</option>
+
+                                                    <option value="2">3吨-6吨</option>
+
+                                                    <option value="3">6吨-10吨</option>
+
+                                                    <option value="4">10吨-15吨</option>
+
+                                                    <option value="5">15吨-20吨</option>
+
+                                                    <option value="6">20吨以上</option>
+                                                
+                                            
+                                        </select>
+                                </div>
+                                    
+                                    <div class="mjFormSel fl index_sel" data-width="85">
+                                        <select name="goodsCube" id="goodsCube" class="bigInput select0 fl">
+                                            <option value="">不限</option>
+                                            
+                                                    <option value="1">8方以下</option>
+                                                
+                                                    <option value="2">8-16方</option>
+                                                    <option value="3">16-24方</option>
+                                                    <option value="4">24-50方</option>
+                                                    <option value="5">50方以上</option>
+                                        </select>
+                                   </div>
+                                </div>
+                                <div class="list clearfix fl m28">
+                                    <p class="fl">需要车型：</p>
+                                    <div class="mjFormSel fl index_sel" data-width="80">
+                                        <select name="carType" id="carType" class="bigInput select0 fl">
+                                            <option value="">不限</option>
+                                            
+                                                    <option value="1">普通货车</option>
+                                                    <option value="2">冷藏车</option>
+                                                    <option value="3">平板</option>
+                                                    <option value="4">常温箱式</option>
+                                                    <option value="5">集装箱</option>
+                                                    <option value="6">高栏</option>
+                                                
+                                            
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="list clearfix fl m28">
+                                    <p class="fl">需要车长：</p>
+                                    <div class="mjFormSel fl index_sel" data-width="95">
+                                        <select name="carLength" id="carLength" class="bigInput select0 fl">
+                                            <option value="">不限</option>
+                                            
+                                                
+                                                
+                                                    <option value="1">4.2米以下</option>
+                                                
+                                            
+                                            
+                                                
+                                                
+                                                    <option value="2">4.2米-7.2米</option>
+                                                
+                                            
+                                            
+                                                
+                                                
+                                                    <option value="3">7.2米-9.6米</option>
+                                                
+                                            
+                                            
+                                                
+                                                
+                                                    <option value="4">9.6米以上</option>
+                                                
+                                            
+                                        </select>
+                                   </div>
+                                </div>
+                                <div class="list  clearfix fl">
+                                    <p class="fl">支付方式：</p>
+                                    <div class="mjFormSel fl index_sel" data-width="80">
+                                        <select name="payType" id="payType" class="bigInput select0 fl">
+                                            <option value="">不限</option>
+                                            
+                                                
+                                                
+                                                    <option value="1">在线支付</option>
+                                                
+                                            
+                                            
+                                                
+                                                
+                                                    <option value="2">现金到付</option>
+                                                
+                                            
+                                            
+                                                
+                                                
+                                                    <option value="3">回单支付</option>
+                                                
+                                            
+                                        </select>
+                                   </div>
+                                </div>
+                                </div>
+                                <div class="clearfix">
+                                <div class="fl m30 dataPosition">
+                                    <p class="fl">装车时间：</p>
+                                    <div class="u-selectBox fl posra">
+                                        <input class="mydata-input data_input fl" id="J-xl-01" readonly="readonly" value="" autocomplete="off" type="text"> <i class="mjFont"></i>
+                                    </div>
+                                    <span class="fl u-line my-line s-desc" style="position:relative;left:-10px;top: -8px">—</span>
+                                    <div class="u-selectBox fl posra">
+                                        <input class="mydata-input data_input fl" id="J-xl-02" readonly="readonly" value="" autocomplete="off" type="text">
+                                        <i class="mjFont"></i>
+                                    </div>
+                                </div>
+                               <div class="fl m30 dataPosition">
+                                    <p class="fl">发布时间：</p>
+                                    <div class="u-selectBox fl posra">
+                                        <input class="mydata-input data_input fl" id="J-xl-03" readonly="readonly" value="" autocomplete="off" type="text">
+                                        <i class="mjFont"></i>
+                                    </div>
+                                    <span class="fl u-line my-line s-desc" style="position:relative;left:-10px;top: -8px">—</span>
+                                    <div class="u-selectBox fl posra">
+                                        <input class="mydata-input data_input fl" id="J-xl-04" readonly="readonly" value="" autocomplete="off" type="text">
+                                        <i class="mjFont"></i>
+                                    </div>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="czh-Bottom clearfix  timeTop f14 cz-active " style="overflow:scroll;">
+
+                            <table style="min-width:1190px;" class="table-responsive">
+                                <tbody><tr class="ky-ddTab">
+                                    <td>路线</td>
+                                    <td>货物详情</td>
+                                    <td>运费</td>
+                                    <td>装车时间</td>
+                                    <td>联系人</td>
+                                    <td>发布时间</td>
+                                    <td>联系电话</td>
+                                    <td>状态</td>
+                                </tr>
+                                
+                                
+                                    
+                                        <tr class="ky-ddKK zc-tr cursor" ng-click="viewDetail(1)" target="_blank">
+                                            <td class="zc-lastTr">
+                                                <div class="fl i-img"><img src="img/i1.png" alt=""></div>
+                                                    <div class="skin-list0 fl">
+                                                        <p class="ellipsis" title="吉林省 长春市 市辖区">吉林省 长春市 市辖区</p>
+                                                        <p class="ellipsis" title="吉林省 长春市 市辖区">吉林省 长春市 市辖区</p>
+                                                    </div>
+                                            </td>
+                                            <td class="" style="padding-right:10px;width:150px;">
+                                                <div class="skin-list1">
+                                                    <p class="">有<span class="mj-fLan">鲜品
+                                                    
+                                                        6.52吨
+                                                    
+                                                    
+                                                    
+                                                    </span>，
+                                                    求<span class="mj-fLan">
+                                                    4.2米-7.2米
+                                                    的
+                                                    冷藏车
+                                                    ，
+                                                    回单支付</span>
+                                                    </p>
+                                                </div>
+                                            </td>
+                                            <td class="" style="padding-left:10px;width:100px;">
+                                            
+                                                <div class="skin-list2 table-cetn">
+                                                    
+                                                            <p class="" style="width:80px;"><span class="wdcl-aFist">2,333.00</span>元</p>
+                                                            
+                                                            
+                                                </div>
+                                            </td>
+                                            <td class="">
+                                                <div class="skin-list3 table-cetn">
+                                                    
+                                                        <p class="ellipsis">2017-01-03</p>
+                                                        <p class="ellipsis"></p>
+                                                    
+                                                    
+                                                </div>
+                                            </td>
+                                            <td class="" style="padding-right:20px;padding-left:20px;width:160px;">
+                                                <div class="skin-list4 czh-posi">
+                                                    <span class="mj-fLan">[公司]</span>长春众品食业有限公司 
+                                                    <img class="rz-img cursor" src="http://misc.lenglianmajia.com/img/xl-r1.png" alt="">
+                                                    
+                                                    <div class="sh-span hide">该用户身份已经通过马甲审核
+                                                        <span class="sh-up"></span>
+                                                        <span class="sh-up1"></span>
+                                                    </div>
+                                                    
+                                                </div>
+                                            </td>
+                                            <td class="">
+                                                <div class="skin-list5  table-cetn">
+                                                    <p class="ellipsis" style="width: 150px;">2017-01-03 10:56</p>
+                                                </div>
+                                            </td>
+                                            <td class="">
+                                                <div class="skin-list6 table-cetn formLi6-posi">
+                                                   
+                                                    <p class="ellipsis">
+                                                        
+                                                            182****0713
+                                                        
+                                                        
+                                                    </p>
+                                                    <p class="ellipsis pho hide" style="display: none;">18222490713</p>
+                                                </div>
+                                            </td>
+                                            <td class="skin-border" style="width:80px;">
+                                               <span style="color: red">待报价</span>
+                                            </td>
+                                           
+                                        </tr>
+                                    
+                                        <tr class="ky-ddKK zc-tr cursor" ng-click="viewDetail(2)" target="_blank">
+                                            <td class="zc-lastTr">
+                                                <div class="fl i-img"><img src="img/i1.png" alt=""></div>
+                                                    <div class="skin-list0 fl">
+                                                        <p class="ellipsis" title="吉林省 长春市 市辖区">吉林省 长春市 市辖区</p>
+                                                        <p class="ellipsis" title="吉林省 长春市 市辖区">吉林省 长春市 市辖区</p>
+                                                    </div>
+                                            </td>
+                                            <td class="" style="padding-right:10px;width:150px;">
+                                                <div class="skin-list1">
+                                                    <p class="">有<span class="mj-fLan">鲜品
+                                                    
+                                                        3.06吨
+                                                    
+                                                    
+                                                    
+                                                    </span>，
+                                                    求<span class="mj-fLan">
+                                                    4.2米-7.2米
+                                                    的
+                                                    冷藏车
+                                                    ，
+                                                    回单支付</span>
+                                                    </p>
+                                                </div>
+                                            </td>
+                                            <td class="" style="padding-left:10px;width:100px;">
+                                            
+                                                <div class="skin-list2 table-cetn">
+                                                    
+                                                            <p class="" style="width:80px;"><span class="wdcl-aFist">1,355.00</span>元</p>
+                                                            
+                                                            
+                                                </div>
+                                            </td>
+                                            <td class="">
+                                                <div class="skin-list3 table-cetn">
+                                                    
+                                                        <p class="ellipsis">2017-01-03</p>
+                                                        <p class="ellipsis"></p>
+                                                    
+                                                    
+                                                </div>
+                                            </td>
+                                            <td class="" style="padding-right:20px;padding-left:20px;width:160px;">
+                                                <div class="skin-list4 czh-posi">
+                                                    <span class="mj-fLan">[公司]</span>长春众品食业有限公司 
+                                                    <img class="rz-img cursor" src="http://misc.lenglianmajia.com/img/xl-r1.png" alt="">
+                                                    
+                                                    <div class="sh-span hide">该用户身份已经通过马甲审核
+                                                        <span class="sh-up"></span>
+                                                        <span class="sh-up1"></span>
+                                                    </div>
+                                                    
+                                                </div>
+                                            </td>
+                                            <td class="">
+                                                <div class="skin-list5  table-cetn">
+                                                    <p class="ellipsis" style="width: 150px;">2017-01-03 10:55</p>
+                                                </div>
+                                            </td>
+                                            <td class="">
+                                                <div class="skin-list6 table-cetn formLi6-posi">
+                                                   
+                                                    <p class="ellipsis">
+                                                        
+                                                            182****0713
+                                                        
+                                                        
+                                                    </p>
+                                                    <p class="ellipsis pho hide">18222490713</p>
+                                                </div>
+                                            </td>
+                                             <td class="skin-border" style="width:80px;">
+                                               <span style="color: yellow;background-color: green;">待抢单</span>
+                                            </td>
+                                            
+                                        </tr>
+                                    
+                                        <tr class="ky-ddKK zc-tr cursor" ng-click="viewDetail(3)" target="_blank">
+                                            <td class="zc-lastTr">
+                                                <div class="fl i-img"><img src="img/i1.png" alt=""></div>
+                                                    <div class="skin-list0 fl">
+                                                        <p class="ellipsis" title="吉林省 长春市 农安县">吉林省 长春市 农安县</p>
+                                                        <p class="ellipsis" title="辽宁省 沈阳市 市辖区">辽宁省 沈阳市 市辖区</p>
+                                                    </div>
+                                            </td>
+                                            <td class="" style="padding-right:10px;width:150px;">
+                                                <div class="skin-list1">
+                                                    <p class="">有<span class="mj-fLan">鲜品
+                                                    
+                                                        4.33吨
+                                                    
+                                                    
+                                                    
+                                                    </span>，
+                                                    求<span class="mj-fLan">
+                                                    4.2米-7.2米
+                                                    的
+                                                    冷藏车
+                                                    ，
+                                                    回单支付</span>
+                                                    </p>
+                                                </div>
+                                            </td>
+                                            <td class="" style="padding-left:10px;width:100px;">
+                                            
+                                                <div class="skin-list2 table-cetn">
+                                                    
+                                                            <p class="" style="width:80px;"><span class="wdcl-aFist">2,076.00</span>元</p>
+                                                            
+                                                            
+                                                </div>
+                                            </td>
+                                            <td class="">
+                                                <div class="skin-list3 table-cetn">
+                                                    
+                                                        <p class="ellipsis">2017-01-03</p>
+                                                        <p class="ellipsis"></p>
+                                                    
+                                                    
+                                                </div>
+                                            </td>
+                                            <td class="" style="padding-right:20px;padding-left:20px;width:160px;">
+                                                <div class="skin-list4 czh-posi">
+                                                    <span class="mj-fLan">[公司]</span>长春众品食业有限公司 
+                                                    <img class="rz-img cursor" src="http://misc.lenglianmajia.com/img/xl-r1.png" alt="">
+                                                    
+                                                    <div class="sh-span hide">该用户身份已经通过马甲审核
+                                                        <span class="sh-up"></span>
+                                                        <span class="sh-up1"></span>
+                                                    </div>
+                                                    
+                                                </div>
+                                            </td>
+                                            <td class="">
+                                                <div class="skin-list5  table-cetn">
+                                                    <p class="ellipsis" style="width: 150px;">2017-01-03 10:54</p>
+                                                </div>
+                                            </td>
+                                            <td class="">
+                                                <div class="skin-list6 table-cetn formLi6-posi">
+                                                   
+                                                    <p class="ellipsis">
+                                                        
+                                                            182****0713
+                                                        
+                                                        
+                                                    </p>
+                                                    <p class="ellipsis pho hide">18222490713</p>
+                                                </div>
+                                            </td>
+                                             <td class="skin-border" style="width:80px;">
+                                               <span style="color: green">待接单</span>
+                                            </td>
+                                            
+                                        </tr>
+                                    
+                                        
+                                    
+                                        <tr class="ky-ddKK zc-tr cursor" ng-click="viewDetail()" target="_blank">
+                                            <td class="zc-lastTr">
+                                                <div class="fl i-img"><img src="img/i1.png" alt=""></div>
+                                                    <div class="skin-list0 fl">
+                                                        <p class="ellipsis" title="吉林省 长春市 市辖区">吉林省 长春市 市辖区</p>
+                                                        <p class="ellipsis" title="吉林省 长春市 市辖区">吉林省 长春市 市辖区</p>
+                                                    </div>
+                                            </td>
+                                            <td class="" style="padding-right:10px;width:150px;">
+                                                <div class="skin-list1">
+                                                    <p class="">有<span class="mj-fLan">鲜品
+                                                    
+                                                        6.42吨
+                                                    
+                                                    
+                                                    
+                                                    </span>，
+                                                    求<span class="mj-fLan">
+                                                    4.2米-7.2米
+                                                    的
+                                                    冷藏车
+                                                    ，
+                                                    回单支付</span>
+                                                    </p>
+                                                </div>
+                                            </td>
+                                            <td class="" style="padding-left:10px;width:100px;">
+                                            
+                                                <div class="skin-list2 table-cetn">
+                                                    
+                                                            <p class="" style="width:80px;"><span class="wdcl-aFist">2,901.00</span>元</p>
+                                                            
+                                                            
+                                                </div>
+                                            </td>
+                                            <td class="">
+                                                <div class="skin-list3 table-cetn">
+                                                    
+                                                        <p class="ellipsis">2017-01-03</p>
+                                                        <p class="ellipsis"></p>
+                                                    
+                                                    
+                                                </div>
+                                            </td>
+                                            <td class="" style="padding-right:20px;padding-left:20px;width:160px;">
+                                                <div class="skin-list4 czh-posi">
+                                                    <span class="mj-fLan">[公司]</span>长春众品食业有限公司 
+                                                    <img class="rz-img cursor" src="http://misc.lenglianmajia.com/img/xl-r1.png" alt="">
+                                                    
+                                                    <div class="sh-span hide">该用户身份已经通过马甲审核
+                                                        <span class="sh-up"></span>
+                                                        <span class="sh-up1"></span>
+                                                    </div>
+                                                    
+                                                </div>
+                                            </td>
+                                            <td class="">
+                                                <div class="skin-list5  table-cetn">
+                                                    <p class="ellipsis" style="width: 150px;">2017-01-03 10:51</p>
+                                                </div>
+                                            </td>
+                                            <td class="">
+                                                <div class="skin-list6 table-cetn formLi6-posi">
+                                                   
+                                                    <p class="ellipsis">
+                                                        
+                                                            182****0713
+                                                        
+                                                        
+                                                    </p>
+                                                    <p class="ellipsis pho hide">18222490713</p>
+                                                </div>
+                                            </td>
+                                            <td class="skin-border" style="width:80px;">
+                                                <div class="table-cetn zc-positon">
+                                                    
+                                                    
+                                                        <a href="javascript:;" class="m-formliBtnend">已抢单</a>
+                                                    
+                                                    
+                                                    
+                                                    
+                                                </div>  
+                                            </td>
+                                        </tr>
+                                    
+                                        <tr class="ky-ddKK zc-tr cursor" ng-click="viewDetail()" target="_blank">
+                                            <td class="zc-lastTr">
+                                                <div class="fl i-img"><img src="img/i1.png" alt=""></div>
+                                                    <div class="skin-list0 fl">
+                                                        <p class="ellipsis" title="天津市 天津市 静海县">天津市 天津市 静海县</p>
+                                                        <p class="ellipsis" title="河北省 沧州市 任丘市">河北省 沧州市 任丘市</p>
+                                                    </div>
+                                            </td>
+                                            <td class="" style="padding-right:10px;width:150px;">
+                                                <div class="skin-list1">
+                                                    <p class="">有<span class="mj-fLan">鲜品
+                                                    
+                                                        3.59吨
+                                                    
+                                                    
+                                                    
+                                                    </span>，
+                                                    求<span class="mj-fLan">
+                                                    4.2米以下
+                                                    的
+                                                    冷藏车
+                                                    ，
+                                                    回单支付</span>
+                                                    </p>
+                                                </div>
+                                            </td>
+                                            <td class="" style="padding-left:10px;width:100px;">
+                                            
+                                                <div class="skin-list2 table-cetn">
+                                                    
+                                                            <p class="" style="width:80px;"><span class="wdcl-aFist">935.00</span>元</p>
+                                                            
+                                                            
+                                                </div>
+                                            </td>
+                                            <td class="">
+                                                <div class="skin-list3 table-cetn">
+                                                    
+                                                        <p class="ellipsis">2017-01-03</p>
+                                                        <p class="ellipsis"></p>
+                                                    
+                                                    
+                                                </div>
+                                            </td>
+                                            <td class="" style="padding-right:20px;padding-left:20px;width:160px;">
+                                                <div class="skin-list4 czh-posi">
+                                                    <span class="mj-fLan">[公司]</span>天津众品食业有限公司 
+                                                    <img class="rz-img cursor" src="http://misc.lenglianmajia.com/img/xl-r1.png" alt="">
+                                                    
+                                                    <div class="sh-span hide">该用户身份已经通过马甲审核
+                                                        <span class="sh-up"></span>
+                                                        <span class="sh-up1"></span>
+                                                    </div>
+                                                    
+                                                </div>
+                                            </td>
+                                            <td class="">
+                                                <div class="skin-list5  table-cetn">
+                                                    <p class="ellipsis" style="width: 150px;">2017-01-03 10:51</p>
+                                                </div>
+                                            </td>
+                                            <td class="">
+                                                <div class="skin-list6 table-cetn formLi6-posi">
+                                                   
+                                                    <p class="ellipsis">
+                                                        
+                                                            187****3153
+                                                        
+                                                        
+                                                    </p>
+                                                    <p class="ellipsis pho hide">18749593153</p>
+                                                </div>
+                                            </td>
+                                            <td class="skin-border" style="width:80px;">
+                                                <div class="table-cetn zc-positon">
+                                                    
+                                                    
+                                                        <a href="javascript:;" class="m-formliBtnend">已抢单</a>
+                                                    
+                                                    
+                                                    
+                                                    
+                                                </div>  
+                                            </td>
+                                        </tr>
+                                    
+                                
+                                
+                            </tbody></table>      
+                        </div>
+                    
+                        <div class="clearfix  timeTop f14 skin cz-active1 hide">
+                                
+                                    
+                                        <div class="skin-table fl">
+                                            <a href="http://goods.lenglianmajia.com/31701031001478.shtml" target="_blank">
+                                            <div class="fl i-img"><img src="img/i1.png" alt=""></div>
+                                            <div class="bor-bom">
+                                                <strong class="skin-strong1">路线：</strong>
+                                                <p class="ellipsis" title="吉林省 长春市 市辖区">吉林省 长春市 市辖区</p>
+                                                <p class="ellipsis" title="吉林省 长春市 市辖区">吉林省 长春市 市辖区</p>
+                                            </div>
+                                            </a>
+                                            <div class="bor-bom clearfix">
+                                                <strong class="skin-strong fl">货物详情：</strong>
+                                                <p class="fl" style="width:180px;">
+                                                         有<span class="mj-payTX1">鲜品
+                                                        
+                                                            6.52吨
+                                                        
+                                                        
+                                                        
+                                                        </span>，
+                                                        求<span class="mj-payTX1">
+                                                        4.2米-7.2米
+                                                        的
+                                                        冷藏车
+                                                        ，
+                                                        回单支付</span>
+                                                        </p>
+                                            </div>
+                                            <div class="bor-bom clearfix">
+                                                <strong class="fl skin-strong">运费：</strong>
+                                                
+                                                    <p class="fl ellipsis" style="width:80px;"><span class="wdcl-aFist">2,333.00</span>元</p>
+                                                    
+                                                    
+                                            </div>
+                                            <div class="bor-bom clearfix">
+                                                <strong class="fl skin-strong">装车时间：</strong>
+                                                
+                                                    <p class="ellipsis fl">2017-01-03</p>
+                                                    <p class="ellipsis fl"></p>
+                                                
+                                                
+                                            </div>
+                                            <div class="bor-bom clearfix">
+                                                <strong class="fl skin-strong">承运方：</strong>
+                                                 <div class="fl czh-posi ">
+                                                    <span class="mj-fLan">[公司]</span>长春众品食业有限公司 
+                                                    <img class="rz-img cursor" src="http://misc.lenglianmajia.com/img/xl-r1.png" alt="">
+                                                    
+                                                    <div class="sh-span hide">该用户身份已经通过马甲审核
+                                                        <span class="sh-up"></span>
+                                                        <span class="sh-up1"></span>
+                                                    </div>
+                                                    
+                                                </div>
+                                            </div>
+                                            <div class="bor-bom clearfix">
+                                                <strong class="skin-strong fl">发布时间：</strong>
+                                                 <p class="fl ellipsis" style="width: 150px;">2017-01-03 10:56</p>
+                                            </div>
+                                            <div class="bor-bom clearfix formLi6-posi">
+                                                <strong class="fl skin-strong">联系电话：</strong>
+                                                
+                                                <p class="fl ellipsis">
+                                                    
+                                                        182****0713
+                                                    
+                                                    
+                                                </p>
+                                                <p class="ellipsis pho hide">18222490713</p>
+                                            </div>
+                                            <div class="clearfix zc-positon sikn-divList">
+                                                
+                                                
+                                                    <a href="javascript:;" class="m-formliBtnend">已抢单</a>
+                                                
+                                                
+                                                
+                                                
+                                            </div>  
+                                        </div>
+                                    
+                                        <div class="skin-table fl">
+                                            <a href="http://goods.lenglianmajia.com/31701031001477.shtml" target="_blank">
+                                            <div class="fl i-img"><img src="img/i1.png" alt=""></div>
+                                            <div class="bor-bom">
+                                                <strong class="skin-strong1">路线：</strong>
+                                                <p class="ellipsis" title="吉林省 长春市 市辖区">吉林省 长春市 市辖区</p>
+                                                <p class="ellipsis" title="吉林省 长春市 市辖区">吉林省 长春市 市辖区</p>
+                                            </div>
+                                            </a>
+                                            <div class="bor-bom clearfix">
+                                                <strong class="skin-strong fl">货物详情：</strong>
+                                                <p class="fl" style="width:180px;">
+                                                         有<span class="mj-payTX1">鲜品
+                                                        
+                                                            3.06吨
+                                                        
+                                                        
+                                                        
+                                                        </span>，
+                                                        求<span class="mj-payTX1">
+                                                        4.2米-7.2米
+                                                        的
+                                                        冷藏车
+                                                        ，
+                                                        回单支付</span>
+                                                        </p>
+                                            </div>
+                                            <div class="bor-bom clearfix">
+                                                <strong class="fl skin-strong">运费：</strong>
+                                                
+                                                    <p class="fl ellipsis" style="width:80px;"><span class="wdcl-aFist">1,355.00</span>元</p>
+                                                    
+                                                    
+                                            </div>
+                                            <div class="bor-bom clearfix">
+                                                <strong class="fl skin-strong">装车时间：</strong>
+                                                
+                                                    <p class="ellipsis fl">2017-01-03</p>
+                                                    <p class="ellipsis fl"></p>
+                                                
+                                                
+                                            </div>
+                                            <div class="bor-bom clearfix">
+                                                <strong class="fl skin-strong">承运方：</strong>
+                                                 <div class="fl czh-posi ">
+                                                    <span class="mj-fLan">[公司]</span>长春众品食业有限公司 
+                                                    <img class="rz-img cursor" src="http://misc.lenglianmajia.com/img/xl-r1.png" alt="">
+                                                    
+                                                    <div class="sh-span hide">该用户身份已经通过马甲审核
+                                                        <span class="sh-up"></span>
+                                                        <span class="sh-up1"></span>
+                                                    </div>
+                                                    
+                                                </div>
+                                            </div>
+                                            <div class="bor-bom clearfix">
+                                                <strong class="skin-strong fl">发布时间：</strong>
+                                                 <p class="fl ellipsis" style="width: 150px;">2017-01-03 10:55</p>
+                                            </div>
+                                            <div class="bor-bom clearfix formLi6-posi">
+                                                <strong class="fl skin-strong">联系电话：</strong>
+                                                
+                                                <p class="fl ellipsis">
+                                                    
+                                                        182****0713
+                                                    
+                                                    
+                                                </p>
+                                                <p class="ellipsis pho hide">18222490713</p>
+                                            </div>
+                                            <div class="clearfix zc-positon sikn-divList">
+                                                
+                                                
+                                                    <a href="javascript:;" class="m-formliBtnend">已抢单</a>
+                                                
+                                                
+                                                
+                                                
+                                            </div>  
+                                        </div>
+                                    
+                                        <div class="skin-table fl">
+                                            <a href="http://goods.lenglianmajia.com/31701031001476.shtml" target="_blank">
+                                            <div class="fl i-img"><img src="img/i1.png" alt=""></div>
+                                            <div class="bor-bom">
+                                                <strong class="skin-strong1">路线：</strong>
+                                                <p class="ellipsis" title="吉林省 长春市 农安县">吉林省 长春市 农安县</p>
+                                                <p class="ellipsis" title="辽宁省 沈阳市 市辖区">辽宁省 沈阳市 市辖区</p>
+                                            </div>
+                                            </a>
+                                            <div class="bor-bom clearfix">
+                                                <strong class="skin-strong fl">货物详情：</strong>
+                                                <p class="fl" style="width:180px;">
+                                                         有<span class="mj-payTX1">鲜品
+                                                        
+                                                            4.33吨
+                                                        
+                                                        
+                                                        
+                                                        </span>，
+                                                        求<span class="mj-payTX1">
+                                                        4.2米-7.2米
+                                                        的
+                                                        冷藏车
+                                                        ，
+                                                        回单支付</span>
+                                                        </p>
+                                            </div>
+                                            <div class="bor-bom clearfix">
+                                                <strong class="fl skin-strong">运费：</strong>
+                                                
+                                                    <p class="fl ellipsis" style="width:80px;"><span class="wdcl-aFist">2,076.00</span>元</p>
+                                                    
+                                                    
+                                            </div>
+                                            <div class="bor-bom clearfix">
+                                                <strong class="fl skin-strong">装车时间：</strong>
+                                                
+                                                    <p class="ellipsis fl">2017-01-03</p>
+                                                    <p class="ellipsis fl"></p>
+                                                
+                                                
+                                            </div>
+                                            <div class="bor-bom clearfix">
+                                                <strong class="fl skin-strong">承运方：</strong>
+                                                 <div class="fl czh-posi ">
+                                                    <span class="mj-fLan">[公司]</span>长春众品食业有限公司 
+                                                    <img class="rz-img cursor" src="http://misc.lenglianmajia.com/img/xl-r1.png" alt="">
+                                                    
+                                                    <div class="sh-span hide">该用户身份已经通过马甲审核
+                                                        <span class="sh-up"></span>
+                                                        <span class="sh-up1"></span>
+                                                    </div>
+                                                    
+                                                </div>
+                                            </div>
+                                            <div class="bor-bom clearfix">
+                                                <strong class="skin-strong fl">发布时间：</strong>
+                                                 <p class="fl ellipsis" style="width: 150px;">2017-01-03 10:54</p>
+                                            </div>
+                                            <div class="bor-bom clearfix formLi6-posi">
+                                                <strong class="fl skin-strong">联系电话：</strong>
+                                                
+                                                <p class="fl ellipsis">
+                                                    
+                                                        182****0713
+                                                    
+                                                    
+                                                </p>
+                                                <p class="ellipsis pho hide">18222490713</p>
+                                            </div>
+                                            <div class="clearfix zc-positon sikn-divList">
+                                                
+                                                
+                                                    <a href="javascript:;" class="m-formliBtnend">已抢单</a>
+                                                
+                                                
+                                                
+                                                
+                                            </div>  
+                                        </div>
+                                    
+                                        <div class="skin-table fl">
+                                            <a href="http://goods.lenglianmajia.com/31701031001475.shtml" target="_blank">
+                                            <div class="fl i-img"><img src="img/i1.png" alt=""></div>
+                                            <div class="bor-bom">
+                                                <strong class="skin-strong1">路线：</strong>
+                                                <p class="ellipsis" title="天津市 天津市 静海县">天津市 天津市 静海县</p>
+                                                <p class="ellipsis" title="河北省 沧州市 市辖区">河北省 沧州市 市辖区</p>
+                                            </div>
+                                            </a>
+                                            <div class="bor-bom clearfix">
+                                                <strong class="skin-strong fl">货物详情：</strong>
+                                                <p class="fl" style="width:180px;">
+                                                         有<span class="mj-payTX1">鲜品
+                                                        
+                                                            3.32吨
+                                                        
+                                                        
+                                                        
+                                                        </span>，
+                                                        求<span class="mj-payTX1">
+                                                        4.2米以下
+                                                        的
+                                                        冷藏车
+                                                        ，
+                                                        回单支付</span>
+                                                        </p>
+                                            </div>
+                                            <div class="bor-bom clearfix">
+                                                <strong class="fl skin-strong">运费：</strong>
+                                                
+                                                    <p class="fl ellipsis" style="width:80px;"><span class="wdcl-aFist">1,091.00</span>元</p>
+                                                    
+                                                    
+                                            </div>
+                                            <div class="bor-bom clearfix">
+                                                <strong class="fl skin-strong">装车时间：</strong>
+                                                
+                                                    <p class="ellipsis fl">2017-01-03</p>
+                                                    <p class="ellipsis fl"></p>
+                                                
+                                                
+                                            </div>
+                                            <div class="bor-bom clearfix">
+                                                <strong class="fl skin-strong">承运方：</strong>
+                                                 <div class="fl czh-posi ">
+                                                    <span class="mj-fLan">[公司]</span>天津众品食业有限公司 
+                                                    <img class="rz-img cursor" src="http://misc.lenglianmajia.com/img/xl-r1.png" alt="">
+                                                    
+                                                    <div class="sh-span hide">该用户身份已经通过马甲审核
+                                                        <span class="sh-up"></span>
+                                                        <span class="sh-up1"></span>
+                                                    </div>
+                                                    
+                                                </div>
+                                            </div>
+                                            <div class="bor-bom clearfix">
+                                                <strong class="skin-strong fl">发布时间：</strong>
+                                                 <p class="fl ellipsis" style="width: 150px;">2017-01-03 10:54</p>
+                                            </div>
+                                            <div class="bor-bom clearfix formLi6-posi">
+                                                <strong class="fl skin-strong">联系电话：</strong>
+                                                
+                                                <p class="fl ellipsis">
+                                                    
+                                                        187****3153
+                                                    
+                                                    
+                                                </p>
+                                                <p class="ellipsis pho hide">18749593153</p>
+                                            </div>
+                                            <div class="clearfix zc-positon sikn-divList">
+                                                
+                                                
+                                                    <a href="javascript:;" class="m-formliBtnend">已抢单</a>
+                                                
+                                                
+                                                
+                                                
+                                            </div>  
+                                        </div>
+                                    
+                                        <div class="skin-table fl">
+                                            <a href="http://goods.lenglianmajia.com/31701031001474.shtml" target="_blank">
+                                            <div class="fl i-img"><img src="img/i1.png" alt=""></div>
+                                            <div class="bor-bom">
+                                                <strong class="skin-strong1">路线：</strong>
+                                                <p class="ellipsis" title="吉林省 长春市 市辖区">吉林省 长春市 市辖区</p>
+                                                <p class="ellipsis" title="吉林省 长春市 市辖区">吉林省 长春市 市辖区</p>
+                                            </div>
+                                            </a>
+                                            <div class="bor-bom clearfix">
+                                                <strong class="skin-strong fl">货物详情：</strong>
+                                                <p class="fl" style="width:180px;">
+                                                         有<span class="mj-payTX1">鲜品
+                                                        
+                                                            3吨
+                                                        
+                                                        
+                                                        
+                                                        </span>，
+                                                        求<span class="mj-payTX1">
+                                                        4.2米-7.2米
+                                                        的
+                                                        冷藏车
+                                                        ，
+                                                        回单支付</span>
+                                                        </p>
+                                            </div>
+                                            <div class="bor-bom clearfix">
+                                                <strong class="fl skin-strong">运费：</strong>
+                                                
+                                                    <p class="fl ellipsis" style="width:80px;"><span class="wdcl-aFist">1,266.00</span>元</p>
+                                                    
+                                                    
+                                            </div>
+                                            <div class="bor-bom clearfix">
+                                                <strong class="fl skin-strong">装车时间：</strong>
+                                                
+                                                    <p class="ellipsis fl">2017-01-03</p>
+                                                    <p class="ellipsis fl"></p>
+                                                
+                                                
+                                            </div>
+                                            <div class="bor-bom clearfix">
+                                                <strong class="fl skin-strong">承运方：</strong>
+                                                 <div class="fl czh-posi ">
+                                                    <span class="mj-fLan">[公司]</span>长春众品食业有限公司 
+                                                    <img class="rz-img cursor" src="http://misc.lenglianmajia.com/img/xl-r1.png" alt="">
+                                                    
+                                                    <div class="sh-span hide">该用户身份已经通过马甲审核
+                                                        <span class="sh-up"></span>
+                                                        <span class="sh-up1"></span>
+                                                    </div>
+                                                    
+                                                </div>
+                                            </div>
+                                            <div class="bor-bom clearfix">
+                                                <strong class="skin-strong fl">发布时间：</strong>
+                                                 <p class="fl ellipsis" style="width: 150px;">2017-01-03 10:53</p>
+                                            </div>
+                                            <div class="bor-bom clearfix formLi6-posi">
+                                                <strong class="fl skin-strong">联系电话：</strong>
+                                                
+                                                <p class="fl ellipsis">
+                                                    
+                                                        182****0713
+                                                    
+                                                    
+                                                </p>
+                                                <p class="ellipsis pho hide">18222490713</p>
+                                            </div>
+                                            <div class="clearfix zc-positon sikn-divList">
+                                                
+                                                
+                                                    <a href="javascript:;" class="m-formliBtnend">已抢单</a>
+                                                
+                                                
+                                                
+                                                
+                                            </div>  
+                                        </div>
+                                    
+                                        <div class="skin-table fl">
+                                            <a href="http://goods.lenglianmajia.com/31701031001473.shtml" target="_blank">
+                                            <div class="fl i-img"><img src="img/i1.png" alt=""></div>
+                                            <div class="bor-bom">
+                                                <strong class="skin-strong1">路线：</strong>
+                                                <p class="ellipsis" title="吉林省 长春市 农安县">吉林省 长春市 农安县</p>
+                                                <p class="ellipsis" title="吉林省 长春市 市辖区">吉林省 长春市 市辖区</p>
+                                            </div>
+                                            </a>
+                                            <div class="bor-bom clearfix">
+                                                <strong class="skin-strong fl">货物详情：</strong>
+                                                <p class="fl" style="width:180px;">
+                                                         有<span class="mj-payTX1">鲜品
+                                                        
+                                                            2.93吨
+                                                        
+                                                        
+                                                        
+                                                        </span>，
+                                                        求<span class="mj-payTX1">
+                                                        4.2米-7.2米
+                                                        的
+                                                        冷藏车
+                                                        ，
+                                                        回单支付</span>
+                                                        </p>
+                                            </div>
+                                            <div class="bor-bom clearfix">
+                                                <strong class="fl skin-strong">运费：</strong>
+                                                
+                                                    <p class="fl ellipsis" style="width:80px;"><span class="wdcl-aFist">758.00</span>元</p>
+                                                    
+                                                    
+                                            </div>
+                                            <div class="bor-bom clearfix">
+                                                <strong class="fl skin-strong">装车时间：</strong>
+                                                
+                                                    <p class="ellipsis fl">2017-01-03</p>
+                                                    <p class="ellipsis fl"></p>
+                                                
+                                                
+                                            </div>
+                                            <div class="bor-bom clearfix">
+                                                <strong class="fl skin-strong">承运方：</strong>
+                                                 <div class="fl czh-posi ">
+                                                    <span class="mj-fLan">[公司]</span>长春众品食业有限公司 
+                                                    <img class="rz-img cursor" src="http://misc.lenglianmajia.com/img/xl-r1.png" alt="">
+                                                    
+                                                    <div class="sh-span hide">该用户身份已经通过马甲审核
+                                                        <span class="sh-up"></span>
+                                                        <span class="sh-up1"></span>
+                                                    </div>
+                                                    
+                                                </div>
+                                            </div>
+                                            <div class="bor-bom clearfix">
+                                                <strong class="skin-strong fl">发布时间：</strong>
+                                                 <p class="fl ellipsis" style="width: 150px;">2017-01-03 10:52</p>
+                                            </div>
+                                            <div class="bor-bom clearfix formLi6-posi">
+                                                <strong class="fl skin-strong">联系电话：</strong>
+                                                
+                                                <p class="fl ellipsis">
+                                                    
+                                                        182****0713
+                                                    
+                                                    
+                                                </p>
+                                                <p class="ellipsis pho hide">18222490713</p>
+                                            </div>
+                                            <div class="clearfix zc-positon sikn-divList">
+                                                
+                                                
+                                                    <a href="javascript:;" class="m-formliBtnend">已抢单</a>
+                                                
+                                                
+                                                
+                                                
+                                            </div>  
+                                        </div>
+                                    
+                                        <div class="skin-table fl">
+                                            <a href="http://goods.lenglianmajia.com/31701031001472.shtml" target="_blank">
+                                            <div class="fl i-img"><img src="img/i1.png" alt=""></div>
+                                            <div class="bor-bom">
+                                                <strong class="skin-strong1">路线：</strong>
+                                                <p class="ellipsis" title="吉林省 长春市 农安县">吉林省 长春市 农安县</p>
+                                                <p class="ellipsis" title="吉林省 松原市 市辖区">吉林省 松原市 市辖区</p>
+                                            </div>
+                                            </a>
+                                            <div class="bor-bom clearfix">
+                                                <strong class="skin-strong fl">货物详情：</strong>
+                                                <p class="fl" style="width:180px;">
+                                                         有<span class="mj-payTX1">鲜品
+                                                        
+                                                            6.97吨
+                                                        
+                                                        
+                                                        
+                                                        </span>，
+                                                        求<span class="mj-payTX1">
+                                                        4.2米-7.2米
+                                                        的
+                                                        冷藏车
+                                                        ，
+                                                        回单支付</span>
+                                                        </p>
+                                            </div>
+                                            <div class="bor-bom clearfix">
+                                                <strong class="fl skin-strong">运费：</strong>
+                                                
+                                                    <p class="fl ellipsis" style="width:80px;"><span class="wdcl-aFist">3,145.00</span>元</p>
+                                                    
+                                                    
+                                            </div>
+                                            <div class="bor-bom clearfix">
+                                                <strong class="fl skin-strong">装车时间：</strong>
+                                                
+                                                    <p class="ellipsis fl">2017-01-03</p>
+                                                    <p class="ellipsis fl"></p>
+                                                
+                                                
+                                            </div>
+                                            <div class="bor-bom clearfix">
+                                                <strong class="fl skin-strong">承运方：</strong>
+                                                 <div class="fl czh-posi ">
+                                                    <span class="mj-fLan">[公司]</span>长春众品食业有限公司 
+                                                    <img class="rz-img cursor" src="http://misc.lenglianmajia.com/img/xl-r1.png" alt="">
+                                                    
+                                                    <div class="sh-span hide">该用户身份已经通过马甲审核
+                                                        <span class="sh-up"></span>
+                                                        <span class="sh-up1"></span>
+                                                    </div>
+                                                    
+                                                </div>
+                                            </div>
+                                            <div class="bor-bom clearfix">
+                                                <strong class="skin-strong fl">发布时间：</strong>
+                                                 <p class="fl ellipsis" style="width: 150px;">2017-01-03 10:52</p>
+                                            </div>
+                                            <div class="bor-bom clearfix formLi6-posi">
+                                                <strong class="fl skin-strong">联系电话：</strong>
+                                                
+                                                <p class="fl ellipsis">
+                                                    
+                                                        182****0713
+                                                    
+                                                    
+                                                </p>
+                                                <p class="ellipsis pho hide">18222490713</p>
+                                            </div>
+                                            <div class="clearfix zc-positon sikn-divList">
+                                                
+                                                
+                                                    <a href="javascript:;" class="m-formliBtnend">已抢单</a>
+                                                
+                                                
+                                                
+                                                
+                                            </div>  
+                                        </div>
+                                    
+                                        <div class="skin-table fl">
+                                            <a href="http://goods.lenglianmajia.com/31701031001471.shtml" target="_blank">
+                                            <div class="fl i-img"><img src="img/i1.png" alt=""></div>
+                                            <div class="bor-bom">
+                                                <strong class="skin-strong1">路线：</strong>
+                                                <p class="ellipsis" title="吉林省 长春市 市辖区">吉林省 长春市 市辖区</p>
+                                                <p class="ellipsis" title="吉林省 长春市 市辖区">吉林省 长春市 市辖区</p>
+                                            </div>
+                                            </a>
+                                            <div class="bor-bom clearfix">
+                                                <strong class="skin-strong fl">货物详情：</strong>
+                                                <p class="fl" style="width:180px;">
+                                                         有<span class="mj-payTX1">鲜品
+                                                        
+                                                            6.42吨
+                                                        
+                                                        
+                                                        
+                                                        </span>，
+                                                        求<span class="mj-payTX1">
+                                                        4.2米-7.2米
+                                                        的
+                                                        冷藏车
+                                                        ，
+                                                        回单支付</span>
+                                                        </p>
+                                            </div>
+                                            <div class="bor-bom clearfix">
+                                                <strong class="fl skin-strong">运费：</strong>
+                                                
+                                                    <p class="fl ellipsis" style="width:80px;"><span class="wdcl-aFist">2,901.00</span>元</p>
+                                                    
+                                                    
+                                            </div>
+                                            <div class="bor-bom clearfix">
+                                                <strong class="fl skin-strong">装车时间：</strong>
+                                                
+                                                    <p class="ellipsis fl">2017-01-03</p>
+                                                    <p class="ellipsis fl"></p>
+                                                
+                                                
+                                            </div>
+                                            <div class="bor-bom clearfix">
+                                                <strong class="fl skin-strong">承运方：</strong>
+                                                 <div class="fl czh-posi ">
+                                                    <span class="mj-fLan">[公司]</span>长春众品食业有限公司 
+                                                    <img class="rz-img cursor" src="http://misc.lenglianmajia.com/img/xl-r1.png" alt="">
+                                                    
+                                                    <div class="sh-span hide">该用户身份已经通过马甲审核
+                                                        <span class="sh-up"></span>
+                                                        <span class="sh-up1"></span>
+                                                    </div>
+                                                    
+                                                </div>
+                                            </div>
+                                            <div class="bor-bom clearfix">
+                                                <strong class="skin-strong fl">发布时间：</strong>
+                                                 <p class="fl ellipsis" style="width: 150px;">2017-01-03 10:51</p>
+                                            </div>
+                                            <div class="bor-bom clearfix formLi6-posi">
+                                                <strong class="fl skin-strong">联系电话：</strong>
+                                                
+                                                <p class="fl ellipsis">
+                                                    
+                                                        182****0713
+                                                    
+                                                    
+                                                </p>
+                                                <p class="ellipsis pho hide">18222490713</p>
+                                            </div>
+                                            <div class="clearfix zc-positon sikn-divList">
+                                                
+                                                
+                                                    <a href="javascript:;" class="m-formliBtnend">已抢单</a>
+                                                
+                                                
+                                                
+                                                
+                                            </div>  
+                                        </div>
+                                    
+                                        <div class="skin-table fl">
+                                            <a href="http://goods.lenglianmajia.com/31701031001470.shtml" target="_blank">
+                                            <div class="fl i-img"><img src="img/i1.png" alt=""></div>
+                                            <div class="bor-bom">
+                                                <strong class="skin-strong1">路线：</strong>
+                                                <p class="ellipsis" title="天津市 天津市 静海县">天津市 天津市 静海县</p>
+                                                <p class="ellipsis" title="河北省 沧州市 任丘市">河北省 沧州市 任丘市</p>
+                                            </div>
+                                            </a>
+                                            <div class="bor-bom clearfix">
+                                                <strong class="skin-strong fl">货物详情：</strong>
+                                                <p class="fl" style="width:180px;">
+                                                         有<span class="mj-payTX1">鲜品
+                                                        
+                                                            3.59吨
+                                                        
+                                                        
+                                                        
+                                                        </span>，
+                                                        求<span class="mj-payTX1">
+                                                        4.2米以下
+                                                        的
+                                                        冷藏车
+                                                        ，
+                                                        回单支付</span>
+                                                        </p>
+                                            </div>
+                                            <div class="bor-bom clearfix">
+                                                <strong class="fl skin-strong">运费：</strong>
+                                                
+                                                    <p class="fl ellipsis" style="width:80px;"><span class="wdcl-aFist">935.00</span>元</p>
+                                                    
+                                                    
+                                            </div>
+                                            <div class="bor-bom clearfix">
+                                                <strong class="fl skin-strong">装车时间：</strong>
+                                                
+                                                    <p class="ellipsis fl">2017-01-03</p>
+                                                    <p class="ellipsis fl"></p>
+                                                
+                                                
+                                            </div>
+                                            <div class="bor-bom clearfix">
+                                                <strong class="fl skin-strong">承运方：</strong>
+                                                 <div class="fl czh-posi ">
+                                                    <span class="mj-fLan">[公司]</span>天津众品食业有限公司 
+                                                    <img class="rz-img cursor" src="http://misc.lenglianmajia.com/img/xl-r1.png" alt="">
+                                                    
+                                                    <div class="sh-span hide">该用户身份已经通过马甲审核
+                                                        <span class="sh-up"></span>
+                                                        <span class="sh-up1"></span>
+                                                    </div>
+                                                    
+                                                </div>
+                                            </div>
+                                            <div class="bor-bom clearfix">
+                                                <strong class="skin-strong fl">发布时间：</strong>
+                                                 <p class="fl ellipsis" style="width: 150px;">2017-01-03 10:51</p>
+                                            </div>
+                                            <div class="bor-bom clearfix formLi6-posi">
+                                                <strong class="fl skin-strong">联系电话：</strong>
+                                                
+                                                <p class="fl ellipsis">
+                                                    
+                                                        187****3153
+                                                    
+                                                    
+                                                </p>
+                                                <p class="ellipsis pho hide">18749593153</p>
+                                            </div>
+                                            <div class="clearfix zc-positon sikn-divList">
+                                                
+                                                
+                                                    <a href="javascript:;" class="m-formliBtnend">已抢单</a>
+                                                
+                                                
+                                                
+                                                
+                                            </div>  
+                                        </div>
+                                    
+                                
+                                
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
-    </div>
+                
+                        <div style="width:100%;margin:0 auto;">
+                        <div id="kkpager"><div><span class="pageBtnWrap"><span class="disabled">首页</span><span class="disabled">上一页</span><span class="curr">1</span><a href="#" onclick="return kkpager._clickHandler(2)" title="第2页">2</a><a href="#" onclick="return kkpager._clickHandler(3)" title="第3页">3</a><a href="#" onclick="return kkpager._clickHandler(4)" title="第4页">4</a><a href="#" onclick="return kkpager._clickHandler(5)" title="第5页">5</a><a href="#" onclick="return kkpager._clickHandler(6)" title="第6页">6</a><a href="#" onclick="return kkpager._clickHandler(7)" title="第7页">7</a><span class="spanDot">...</span><a href="#" onclick="return kkpager._clickHandler(2)" title="下一页">下一页</a><a href="#" onclick="return kkpager._clickHandler(13906)" title="尾页">尾页</a></span><span class="infoTextAndGoPageBtnWrap"><span class="totalText">当前第<span class="currPageNum">1</span>页<span class="totalInfoSplitStr">/</span>共<span class="totalPageNum">13906</span>页</span><span class="goPageBox">&nbsp;转到<span id="kkpager_gopage_wrap"><input id="kkpager_btn_go" onclick="kkpager.gopage()" value="确定" type="button"><input id="kkpager_btn_go_input" onfocus="kkpager.focus_gopage()" onkeypress="return kkpager.keypress_gopage(event);" onblur="kkpager.blur_gopage()" value="2" type="text"></span>页</span></span></div><div style="clear:both;"></div></div>
+                        </div>
+                    <script>
+
+
+$(function(){
+      
+      
+// 列表排列切换
+
+
+// 搜索下拉
+        $(document).ready(function(){ 
+            $(".u-moreSerch").click(function(){ 
+            $(".m-bombBox122").toggle(); 
+            return true; 
+            }) 
+        }) 
+
+
+});
+    
+</script>
 </body>
 </html>
