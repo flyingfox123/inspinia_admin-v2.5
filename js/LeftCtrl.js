@@ -133,3 +133,48 @@ app.controller('goodsBjCtrl', ['$scope', '$resource', '$modalInstance', '$modal'
 		};
 	}
 ]);
+
+
+app.controller('orderCtrl', ['$scope', '$resource', '$modal',
+	function($scope, $resource, $modal) {
+		$scope.operate = function(num) {
+				var modalInstance = $modal.open({
+					templateUrl: 'order/orderExDeal.html',
+					controller: 'goodsDetailCtrl',
+					backdrop: 'static'
+				});
+		};
+
+	}
+]);
+
+
+app.controller('carCtrl', ['$scope', '$resource', '$modal',
+	function($scope, $resource, $modal) {
+		$scope.operate = function(num) {
+				var modalInstance = $modal.open({
+					templateUrl: 'car/carRecDeal.html',
+					controller: 'goodsDetailCtrl',
+					backdrop: 'static'
+
+				});
+		};
+
+	}
+]);
+
+
+app.controller('driverInfoCtrl', ['$scope', '$resource', '$modal',
+	function($scope, $resource, $modal) {
+		$scope.operate = function(num) {
+				var modalInstance = $modal.open({
+					templateUrl: 'car/driverInfoDetail.html',
+					controller: 'goodsDetailCtrl',
+					backdrop: 'static',
+					size:'lg'
+
+				});
+		};
+
+	}
+]);

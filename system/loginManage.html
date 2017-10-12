@@ -31,14 +31,11 @@
 						<div class="col-md-4">
 							<input class="form-control" type="text" id="detail-loginName" name="name" placeholder="中文/字母开头+数字下划线组合,总长度2~25字符" value="" required autofocus>
 						</div>-->
-						<label class="col-md-2 control-label" for="realName"><span style="color:red">*</span>用户姓名:</label>
+						<label class="col-md-2 control-label" for="realName"><span style="color:red">*</span>用户角色:</label>
 						<div class="col-md-4">
-							<input class="form-control" id="detail-realName" name="realName" placeholder="选择用户" value="" required="" aria-required="true" type="text">
+							<input class="form-control" id="detail-realName" name="realName" placeholder="所有角色" value="" required="" aria-required="true" type="text">
 						</div>
-						<label class="col-md-2 control-label" for="mobile"><span style="color:red">*</span>用户角色:</label>
-						<div class="col-md-4">
-							<input class="form-control mob" id="detail-mobile" name="mobile" placeholder="选择用户角色权限" data-mask="" value="" required="" aria-required="true" type="text">
-						 </div>
+						
 					</div>
 					<div class="form-group">
 						
@@ -46,7 +43,7 @@
 						
 					</div>
 					<div class="form-group">
-						<label class="col-md-2 control-label" for="valid">启用:</label>
+						<label class="col-md-2 control-label" for="valid">Session启用:</label>
 						<div class="col-md-4">
 							是
 							<input class="minimal" name="valid" id="valid" checked="" value="true" type="radio">
@@ -57,14 +54,11 @@
 				
 					</div>
 					<div class="form-group">
-						<label class="col-md-2 control-label" for="registerTime">生效时间:</label>
+						<label class="col-md-2 control-label" for="registerTime">失效时间:</label>
 						<div class="col-md-4">
-							<input class="form-control" id="detail-registerTime" readonly="" name="registerTime" placeholder="2017-10-12" value="" type="text">
+							<input class="form-control" id="detail-registerTime" readonly="" name="registerTime" placeholder="30分钟" value="" type="text">
 						</div>
-						<label class="col-md-2 control-label" for="lastLoginTime">失效:</label>
-						<div class="col-md-4">
-							<input class="form-control" id="detail-lastLoginTime" readonly="" name="lastLoginTime" placeholder="2018-10-12" value="" type="text">
-						</div>
+						
 					</div>
 					<div class="box-footer clearfix" style="margin-left:45%">
 						<button id="saveUser_btn" class="btn btn-success btn-flat"><i class="fa fa-save"></i> 保 存 </button>

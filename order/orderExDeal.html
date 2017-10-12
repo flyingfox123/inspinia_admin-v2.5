@@ -1,0 +1,60 @@
+<div id="modal">
+    <div class="modal-header">
+        <h3>异常订单处理</h3>
+    </div>
+    <div class="modal-body">
+        <form name="form" class="form-horizontal" novalidate>
+            <div ng-show="operations.visible != ''">
+                <alert ng-repeat="operation in operations" type="{{operation.state}}" close="closeTips()">{{operation.message}}</alert>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-3 control-label no-padding-right" for="form-field-1">
+                    处理原因&nbsp; <em style="color: #c9302c">*</em>
+                </label>
+                <div class="col-sm-9">
+                    <input type="text" id="form-field-1" name="loginName"  placeholder="请输入货物单价"   />
+                    
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-3 control-label no-padding-right" for="form-field-2">
+                    处理详情&nbsp; <em style="color: #c9302c">*</em>
+                </label>
+                <div class="col-sm-9">
+                    <input type="text" id="form-field-2" name="password" ng-model="user.password" placeholder="请输入货物总价" required ng-maxlength="20" class="input-sm"/>
+                    
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-3 control-label no-padding-right" for="form-field-2">
+                    订单状态&nbsp; <em style="color: #c9302c">*</em>
+                </label>
+                <div class="col-sm-9">
+                    <select class="select">
+                        <option>正常</option>
+                        <option>待报价</option>
+                        <option>待接单</option>
+                    </select>
+                    
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-3 control-label no-padding-right">
+                    备注&nbsp;
+                    <em style="color: #c9302c">*</em>
+                </label>
+                <div class="col-sm-9">
+                    <input type="text" name="name" ng-model="user.name" placeholder="请输入备注" required ng-maxlength="20" class="input-sm"/>
+                    
+                </div>
+            </div>
+            
+        </form>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-primary" onclick="javascript:alert('提交成功')" ="">提交</button>
+        <button class="btn btn-warning" ng-click="cancel()">取消</button>
+    </div>
+</div>

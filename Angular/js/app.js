@@ -62,6 +62,16 @@ var app = angular.module('myApp', [
                 url: '/mainCarInvite',
                 templateUrl:'car/carInvite.html'
             })
+                 .state('main.carRec', {
+                url: '/mainCarRec',
+                templateUrl:'car/carRec.html',
+                controller:'carCtrl'
+            })
+                 .state('main.driverInfo', {
+                url: '/mainDriverInfo',
+                templateUrl:'car/driverInfo.html',
+                controller:'driverInfoCtrl'
+            })
                 .state('main.departmentManage', {
                 url: '/mainDepartmentMange',
                 templateUrl:'system/departmentMange.html'
@@ -94,6 +104,15 @@ var app = angular.module('myApp', [
                 .state('main.orderList', {
                 url: '/mainOrderList',
                 templateUrl:'order/orderList.html'
+            })
+                .state('main.orderDetail', {
+                url: '/mainOrderDetail',
+                templateUrl:'order/orderDetail.html'
+            })
+                .state('main.orderListEx', {
+                url: '/mainOrderListEx',
+                templateUrl:'order/orderListEx.html',
+                controller:'orderCtrl'
             })
                 ;
         // 设置默认页
