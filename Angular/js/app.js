@@ -28,7 +28,8 @@ var app = angular.module('myApp', [
             })
              .state('main.yundanList', {
                 url: '/mainYundanList',
-                templateUrl:'yundanList.html'
+                templateUrl:'yundanList.html',
+                controller:'yundanCtrl'
             })
              .state('main.yundanDetail', {
                 url: '/mainYundanDetail',

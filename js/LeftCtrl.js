@@ -188,6 +188,15 @@ app.controller('driverInfoCtrl', ['$scope', '$resource', '$modal',
 	}
 ]);
 
+app.controller('yundanCtrl', ['$scope', '$resource', '$modal','$state',
+	function($scope, $resource, $modal,$state) {
+		$scope.view = function() {
+				$state.go('main.yundanRoad');
+		};
+
+	}
+]);
+
 
 app.controller('sweetAlertCtrl', ['$scope', '$resource', '$modal',
 	function($scope, $resource, $modal) {
