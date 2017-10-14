@@ -114,6 +114,29 @@ var app = angular.module('myApp', [
                 templateUrl:'order/orderListEx.html',
                 controller:'orderCtrl'
             })
+
+            .state('main.invoiceList', {
+                url: '/mainInvoiceList',
+                templateUrl:'invoice/invoiceList.html',
+                controller:'sweetAlertCtrl'
+            })
+            .state('main.invoiceGet', {
+                url: '/mainInvoiceGet',
+                templateUrl:'invoice/invoiceGet.html',
+                controller:'sweetAlertCtrl'
+            })
+
+            .state('main.invoiceInfo', {
+                url: '/mainInvoiceInfo',
+                templateUrl:'invoice/invoiceInfo.html',
+                controller:'sweetAlertCtrl'
+            })
+
+             .state('main.invoiceAddress', {
+                url: '/mainInvoiceAddress',
+                templateUrl:'invoice/invoiceAddress.html',
+                controller:'sweetAlertCtrl'
+            })
                 ;
         // 设置默认页
         $urlRouterProvider.otherwise('/main');

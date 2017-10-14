@@ -178,3 +178,45 @@ app.controller('driverInfoCtrl', ['$scope', '$resource', '$modal',
 
 	}
 ]);
+
+
+app.controller('sweetAlertCtrl', ['$scope', '$resource', '$modal',
+	function($scope, $resource, $modal) {
+		$scope.view = function(num) {
+				var modalInstance = $modal.open({
+					templateUrl: 'invoice/invoiceDetail.html',
+					controller: 'goodsDetailCtrl',
+					backdrop: 'static'
+
+				});
+		};
+
+
+$scope.addAddress = function(num) {
+				var modalInstance = $modal.open({
+					templateUrl: 'invoice/addAddress.html',
+					controller: 'goodsDetailCtrl',
+					backdrop: 'static'
+
+				});
+		};
+
+		$scope.delete = function () {
+		        swal({
+		                title: "是否确定删除?",
+		                text: "删除后数据将无法恢复!",
+		                type: "warning",
+		                showCancelButton: true,
+		                confirmButtonColor: "#DD6B55",
+		                confirmButtonText: "确定",
+		                cancelButtonText: "取消",
+		                closeOnConfirm: false,
+		                closeOnCancel: false
+		            },
+		            function () {
+		                swal("已删除!");
+		            });
+   		 }
+
+	}
+]);

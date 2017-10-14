@@ -1,0 +1,45 @@
+<div id="modal">
+    <div class="modal-header">
+        <h3>添加发票地址</h3>
+    </div>
+    <div class="modal-body">
+        <form name="form" class="form-horizontal" novalidate>
+            <div ng-show="operations.visible != ''">
+                <alert ng-repeat="operation in operations" type="{{operation.state}}" close="closeTips()">{{operation.message}}</alert>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-3 control-label no-padding-right" for="form-field-1">
+                    收件人&nbsp; <em style="color: #c9302c">*</em>
+                </label>
+                <div class="col-sm-9">
+                    <input type="text" id="form-field-1" name="loginName" placeholder="请输入收件人"  class="input-sm"/>
+                 
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-3 control-label no-padding-right" for="form-field-2">
+                    收件人电话&nbsp; <em style="color: #c9302c">*</em>
+                </label>
+                <div class="col-sm-9">
+                    <input type="text" id="form-field-2" name="password"  placeholder="请输入收件人电话" required ng-maxlength="20" class="input-sm"/>
+       
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-3 control-label no-padding-right">
+                    收件地址&nbsp;
+                    <em style="color: #c9302c">*</em>
+                </label>
+                <div class="col-sm-9">
+                    <input type="text" name="name"  placeholder="请输入收件地址" required ng-maxlength="20" class="input-sm"/>
+                   
+                </div>
+            </div>
+            
+        </form>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-primary" ng-disabled="form.$invalid" ng-click="ok()">保存</button>
+        <button class="btn btn-warning" ng-click="cancel()">取消</button>
+    </div>
+</div>

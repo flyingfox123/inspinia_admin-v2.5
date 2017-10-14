@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+    </head>
+    <body>
+        <div class="ibox-content m-b-sm border-bottom">
+            <div class="row">
+                <button type="button" class="btn btn-w-m btn-warning" ng-click="addAddress()" >添加地址</button>
+            </div>
+            
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="ibox">
+                    <div class="ibox-content">
+                        <table class="footable table table-stripped toggle-arrow-tiny default footable-loaded" data-page-size="15">
+                            <thead>
+                                <tr>
+                                    <th class="footable-visible footable-first-column footable-sortable">收件人<span class="footable-sort-indicator"></span></th>
+                                    <th data-hide="phone" class="footable-visible footable-sortable">手机号<span class="footable-sort-indicator"></span></th>
+                                    <th data-hide="phone" class="footable-visible footable-sortable">收件地址<span class="footable-sort-indicator"></span></th>
+                                    <th data-hide="phone" class="footable-visible footable-sortable">状态<span class="footable-sort-indicator"></span></th>
+                                    <th class="text-right footable-visible footable-last-column footable-sortable">操作<span class="footable-sort-indicator"></span></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr style="display: table-row;" class="footable-even">
+                                    <td class="footable-visible footable-first-column"><span class="footable-toggle"></span>
+                                    张三
+                                </td>
+                                <td class="footable-visible">
+                                    13312312345
+                                </td>
+                                <td class="footable-visible">
+                                    山东省济南市历城区XXXX
+                                </td>
+                                
+                                <td class="footable-visible">
+                                    <span class="label label-primary">默认地址</span>
+                                </td>
+                                <td class="text-right footable-visible footable-last-column">
+                                    <div class="btn-group">
+                                        <button class="btn-white btn btn-xs"  ng-click="delete()" >删除</button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr style="display: table-row;" class="footable-odd">
+                                <td class="footable-visible footable-first-column"><span class="footable-toggle"></span>
+                                张三
+                            </td>
+                            <td class="footable-visible">
+                                13312312345
+                            </td>
+                            <td class="footable-visible">
+                                山东省济南市历城区XXXX
+                            </td>
+                            <td class="footable-visible">
+                                <span class="label label-success">备用地址</span>
+                            </td>
+                            <td class="text-right footable-visible footable-last-column">
+                                <div class="btn-group">
+                                    <button class="btn-white btn btn-xs"  ng-click="delete()" >删除</button>
+                                </div>
+                            </td>
+                        </tr>
+                        
+                       
+</tbody>
+<tfoot>
+<tr>
+<td colspan="7" class="footable-visible">
+<ul class="pagination pull-right"><li class="footable-page-arrow disabled"><a data-page="first" href="#first">«</a></li><li class="footable-page-arrow disabled"><a data-page="prev" href="#prev">‹</a></li><li class="footable-page active"><a data-page="0" href="#">1</a></li><li class="footable-page"><a data-page="1" href="#">2</a></li><li class="footable-page"><a data-page="2" href="#">3</a></li><li class="footable-page-arrow"><a data-page="next" href="#next">›</a></li><li class="footable-page-arrow"><a data-page="last" href="#last">»</a></li></ul>
+</td>
+</tr>
+</tfoot>
+</table>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

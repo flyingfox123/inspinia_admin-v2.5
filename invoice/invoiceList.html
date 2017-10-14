@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+
+</head>
+<body>
+
+
+
+            <div class="ibox-content m-b-sm border-bottom">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <label class="control-label" for="order_id">发票编码</label>
+                            <input id="order_id" name="order_id" value="" placeholder="发票编码" class="form-control" type="text">
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <label class="control-label" for="status">运单号</label>
+                            <input id="status" name="status" value="" placeholder="运单号" class="form-control" type="text">
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <label class="control-label" for="customer">货主账单</label>
+                            <input id="customer" name="customer" value="" placeholder="货主账单" class="form-control" type="text">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <label class="control-label" for="date_added">申请时间起</label>
+                            <div class="input-group date">
+                                <span class="input-group-addon"><i class="fa fa-calendar"></i></span><input id="申请时间起" class="form-control" value="03/04/2014" type="text">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <label class="control-label" for="date_modified">申请时间止</label>
+                            <div class="input-group date">
+                                <span class="input-group-addon"><i class="fa fa-calendar"></i></span><input id="申请时间止" class="form-control" value="03/06/2014" type="text">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <label class="control-label" for="amount">状态</label>
+               
+                                <select class="form-control">
+                                    <option>新建</option>
+                                    <option>废弃</option>
+                                    <option>退回</option>
+                                    <option>已开票</option>
+                                </select>
+                    
+                        </div>
+                    </div>
+                    <div class="col-sm-5">
+                        
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="ibox">
+                        <div class="ibox-content">
+
+                            <table class="footable table table-stripped toggle-arrow-tiny default footable-loaded" data-page-size="15">
+                                <thead>
+                                <tr>
+
+                                    <th class="footable-visible footable-first-column footable-sortable">发票编码<span class="footable-sort-indicator"></span></th>
+                                    <th data-hide="phone" class="footable-visible footable-sortable">开票公司<span class="footable-sort-indicator"></span></th>
+                                    <th data-hide="phone" class="footable-visible footable-sortable">金额<span class="footable-sort-indicator"></span></th>
+                                     <th data-hide="phone" class="footable-visible footable-sortable">税额<span class="footable-sort-indicator"></span></th>
+                                    <th data-hide="phone" class="footable-visible footable-sortable">申请时间起<span class="footable-sort-indicator"></span></th>
+                                    <th data-hide="phone,tablet" class="footable-visible footable-sortable">申请时间止<span class="footable-sort-indicator"></span></th>
+                                    <th data-hide="phone" class="footable-visible footable-sortable">状态<span class="footable-sort-indicator"></span></th>
+                                    <th class="text-right footable-visible footable-last-column footable-sortable">操作<span class="footable-sort-indicator"></span></th>
+
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr style="display: table-row;" class="footable-even">
+                                    <td class="footable-visible footable-first-column"><span class="footable-toggle"></span>
+                                       000000000013214
+                                    </td>
+                                    <td class="footable-visible">
+                                        北京XX物流公司
+                                    </td>
+                                    <td class="footable-visible">
+                                        5000.00元
+                                    </td>
+                                    <td class="footable-visible">
+                                        500.00元
+                                    </td>
+                                    <td class="footable-visible">
+                                        03/04/2015
+                                    </td>
+                                    <td class="footable-visible">
+                                        03/05/2015
+                                    </td>
+                                    <td class="footable-visible">
+                                        <span class="label label-primary">已开票</span>
+                                    </td>
+                                    <td class="text-right footable-visible footable-last-column">
+                                        <div class="btn-group">
+                                            <button class="btn-white btn btn-xs" ng-click="view()">查看</button>
+                                            <button class="btn-white btn btn-xs"  ng-click="delete()" >删除</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr style="display: table-row;" class="footable-odd">
+                                    <td class="footable-visible footable-first-column"><span class="footable-toggle"></span>
+                                       000000000013214
+                                    </td>
+                                    <td class="footable-visible">
+                                        北京XX物流公司
+                                    </td>
+                                    <td class="footable-visible">
+                                        5000.00元
+                                    </td>
+                                    <td class="footable-visible">
+                                        500.00元
+                                    </td>
+                                    <td class="footable-visible">
+                                        03/04/2015
+                                    </td>
+                                    <td class="footable-visible">
+                                        03/05/2015
+                                    </td>
+                                    <td class="footable-visible">
+                                        <span class="label label-success">申请中</span>
+                                    </td>
+                                    <td class="text-right footable-visible footable-last-column">
+                                        <div class="btn-group">
+                                            <button class="btn-white btn btn-xs" ng-click="view()">查看</button>
+                                            <button class="btn-white btn btn-xs" ng-click="delete()">删除</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                
+<tr style="display: table-row;" class="footable-even">
+                                    <td class="footable-visible footable-first-column"><span class="footable-toggle"></span>
+                                       000000000013214
+                                    </td>
+                                    <td class="footable-visible">
+                                        北京XX物流公司
+                                    </td>
+                                    <td class="footable-visible">
+                                        5000.00元
+                                    </td>
+                                    <td class="footable-visible">
+                                        500.00元
+                                    </td>
+                                    <td class="footable-visible">
+                                        03/04/2015
+                                    </td>
+                                    <td class="footable-visible">
+                                        03/05/2015
+                                    </td>
+                                    <td class="footable-visible">
+                                        <span class="label label-danger">已废弃</span>
+                                    </td>
+                                    <td class="text-right footable-visible footable-last-column">
+                                        <div class="btn-group">
+                                            <button class="btn-white btn btn-xs" ng-click="view()">查看</button>
+                                            <button class="btn-white btn btn-xs" ng-click="delete()">删除</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr style="display: table-row;" class="footable-odd">
+                                    <td class="footable-visible footable-first-column"><span class="footable-toggle"></span>
+                                       000000000013214
+                                    </td>
+                                    <td class="footable-visible">
+                                        北京XX物流公司
+                                    </td>
+                                    <td class="footable-visible">
+                                        5000.00元
+                                    </td>
+                                    <td class="footable-visible">
+                                        500.00元
+                                    </td>
+                                    <td class="footable-visible">
+                                        03/04/2015
+                                    </td>
+                                    <td class="footable-visible">
+                                        03/05/2015
+                                    </td>
+                                    <td class="footable-visible">
+                                        <span class="label label-warning">已退回</span>
+                                    </td>
+                                    <td class="text-right footable-visible footable-last-column">
+                                        <div class="btn-group">
+                                            <button class="btn-white btn btn-xs" ng-click="view()">查看</button>
+                                            <button class="btn-white btn btn-xs" ng-click="delete()">删除</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr style="display: table-row;" class="footable-even">
+                                    <td class="footable-visible footable-first-column"><span class="footable-toggle"></span>
+                                       000000000013214
+                                    </td>
+                                    <td class="footable-visible">
+                                        北京XX物流公司
+                                    </td>
+                                    <td class="footable-visible">
+                                        5000.00元
+                                    </td>
+                                    <td class="footable-visible">
+                                        500.00元
+                                    </td>
+                                    <td class="footable-visible">
+                                        03/04/2015
+                                    </td>
+                                    <td class="footable-visible">
+                                        03/05/2015
+                                    </td>
+                                    <td class="footable-visible">
+                                        <span class="label label-primary">已开票</span>
+                                    </td>
+                                    <td class="text-right footable-visible footable-last-column">
+                                        <div class="btn-group">
+                                            <button class="btn-white btn btn-xs" ng-click="view()">查看</button>
+                                            <button class="btn-white btn btn-xs" ng-click="delete()">删除</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr style="display: table-row;" class="footable-odd">
+                                    <td class="footable-visible footable-first-column"><span class="footable-toggle"></span>
+                                       000000000013214
+                                    </td>
+                                    <td class="footable-visible">
+                                        北京XX物流公司
+                                    </td>
+                                    <td class="footable-visible">
+                                        5000.00元
+                                    </td>
+                                    <td class="footable-visible">
+                                        500.00元
+                                    </td>
+                                    <td class="footable-visible">
+                                        03/04/2015
+                                    </td>
+                                    <td class="footable-visible">
+                                        03/05/2015
+                                    </td>
+                                    <td class="footable-visible">
+                                        <span class="label label-primary">已开票</span>
+                                    </td>
+                                    <td class="text-right footable-visible footable-last-column">
+                                        <div class="btn-group">
+                                            <button class="btn-white btn btn-xs" ng-click="view()">查看</button>
+                                            <button class="btn-white btn btn-xs" ng-click="delete()">删除</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr style="display: table-row;" class="footable-even">
+                                    <td class="footable-visible footable-first-column"><span class="footable-toggle"></span>
+                                       000000000013214
+                                    </td>
+                                    <td class="footable-visible">
+                                        北京XX物流公司
+                                    </td>
+                                    <td class="footable-visible">
+                                        5000.00元
+                                    </td>
+                                    <td class="footable-visible">
+                                        500.00元
+                                    </td>
+                                    <td class="footable-visible">
+                                        03/04/2015
+                                    </td>
+                                    <td class="footable-visible">
+                                        03/05/2015
+                                    </td>
+                                    <td class="footable-visible">
+                                        <span class="label label-primary">已开票</span>
+                                    </td>
+                                    <td class="text-right footable-visible footable-last-column">
+                                        <div class="btn-group">
+                                            <button class="btn-white btn btn-xs" ng-click="view()">查看</button>
+                                            <button class="btn-white btn btn-xs" ng-click="delete()">删除</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr style="display: table-row;" class="footable-odd">
+                                    <td class="footable-visible footable-first-column"><span class="footable-toggle"></span>
+                                       000000000013214
+                                    </td>
+                                    <td class="footable-visible">
+                                        北京XX物流公司
+                                    </td>
+                                    <td class="footable-visible">
+                                        5000.00元
+                                    </td>
+                                    <td class="footable-visible">
+                                        500.00元
+                                    </td>
+                                    <td class="footable-visible">
+                                        03/04/2015
+                                    </td>
+                                    <td class="footable-visible">
+                                        03/05/2015
+                                    </td>
+                                    <td class="footable-visible">
+                                        <span class="label label-primary">已开票</span>
+                                    </td>
+                                    <td class="text-right footable-visible footable-last-column">
+                                        <div class="btn-group">
+                                            <button class="btn-white btn btn-xs" ng-click="view()">查看</button>
+                                            <button class="btn-white btn btn-xs" ng-click="delete()">删除</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr style="display: table-row;" class="footable-even">
+                                    <td class="footable-visible footable-first-column"><span class="footable-toggle"></span>
+                                       000000000013214
+                                    </td>
+                                    <td class="footable-visible">
+                                        北京XX物流公司
+                                    </td>
+                                    <td class="footable-visible">
+                                        5000.00元
+                                    </td>
+                                    <td class="footable-visible">
+                                        500.00元
+                                    </td>
+                                    <td class="footable-visible">
+                                        03/04/2015
+                                    </td>
+                                    <td class="footable-visible">
+                                        03/05/2015
+                                    </td>
+                                    <td class="footable-visible">
+                                        <span class="label label-primary">已开票</span>
+                                    </td>
+                                    <td class="text-right footable-visible footable-last-column">
+                                        <div class="btn-group">
+                                            <button class="btn-white btn btn-xs" ng-click="view()">查看</button>
+                                            <button class="btn-white btn btn-xs" ng-click="delete()">删除</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr style="display: table-row;" class="footable-odd">
+                                    <td class="footable-visible footable-first-column"><span class="footable-toggle"></span>
+                                       000000000013214
+                                    </td>
+                                    <td class="footable-visible">
+                                        北京XX物流公司
+                                    </td>
+                                    <td class="footable-visible">
+                                        5000.00元
+                                    </td>
+                                    <td class="footable-visible">
+                                        500.00元
+                                    </td>
+                                    <td class="footable-visible">
+                                        03/04/2015
+                                    </td>
+                                    <td class="footable-visible">
+                                        03/05/2015
+                                    </td>
+                                    <td class="footable-visible">
+                                        <span class="label label-primary">已开票</span>
+                                    </td>
+                                    <td class="text-right footable-visible footable-last-column">
+                                        <div class="btn-group">
+                                            <button class="btn-white btn btn-xs" ng-click="view()">查看</button>
+                                            <button class="btn-white btn btn-xs"  ng-click="delete()" >删除</button>
+                                        </div>
+                                    </td>
+                                </tr>
+
+
+                                </tbody>
+                                <tfoot>
+                                <tr>
+                                    <td colspan="7" class="footable-visible">
+                                        <ul class="pagination pull-right"><li class="footable-page-arrow disabled"><a data-page="first" href="#first">«</a></li><li class="footable-page-arrow disabled"><a data-page="prev" href="#prev">‹</a></li><li class="footable-page active"><a data-page="0" href="#">1</a></li><li class="footable-page"><a data-page="1" href="#">2</a></li><li class="footable-page"><a data-page="2" href="#">3</a></li><li class="footable-page-arrow"><a data-page="next" href="#next">›</a></li><li class="footable-page-arrow"><a data-page="last" href="#last">»</a></li></ul>
+                                    </td>
+                                </tr>
+                                </tfoot>
+                            </table>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+</body>
+</html>
+         
+
+         
+
+
