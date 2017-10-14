@@ -115,6 +115,12 @@ var app = angular.module('myApp', [
                 controller:'orderCtrl'
             })
 
+                .state('main.orderTrack', {
+                url: '/mainOrderTrack',
+                templateUrl:'order/orderTrack.html',
+                controller:'orderCtrl'
+            })
+
             .state('main.invoiceList', {
                 url: '/mainInvoiceList',
                 templateUrl:'invoice/invoiceList.html',

@@ -145,6 +145,15 @@ app.controller('orderCtrl', ['$scope', '$resource', '$modal',
 				});
 		};
 
+		$scope.view = function() {
+				var modalInstance = $modal.open({
+					templateUrl: 'order/yundanDetail.html',
+					controller: 'goodsDetailCtrl',
+					backdrop: 'static',
+					size:'lg'
+				});
+		};
+
 	}
 ]);
 

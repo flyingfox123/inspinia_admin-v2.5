@@ -1,0 +1,430 @@
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="wrapper wrapper-content">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="ibox">
+                                    <div class="ibox-content">
+                                        <div class="row">
+                                            <div class="col-sm-4">
+                                                <div class="form-group">
+                                                    <label class="control-label" for="product_name">订单号</label>
+                                                    <input type="text" id="product_name" name="product_name" value="" placeholder="订单编号" class="form-control">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-2">
+                                                <div class="form-group">
+                                                    <label class="control-label" for="price">客户</label>
+                                                    <input type="text" id="price" name="price" value="" placeholder="客户名称" class="form-control">
+                                                </div>
+                                            </div>
+            
+                                            <div class="col-sm-4">
+                                                <div class="form-group">
+                                                    <label class="control-label" for="status">状态</label>
+                                                    <select name="status" id="status" class="form-control">
+                                                        <option value="1" selected="">匹配中</option>
+                                                        <option value="0">待提货</option>
+                                                        <option value="0">在途</option>
+                                                        <option value="0">到货</option>
+                                                        <option value="0">回单已传</option>
+                                                        <option value="0">回单拒绝</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <div class="ibox float-e-margins">
+                                                <div class="ibox-content">
+                                                    <table class="footable table table-stripped toggle-arrow-tiny" data-page-size="8">
+                                                        <thead>
+                                                            <tr>
+                                                                <th data-toggle="true">订单编号</th>
+                                                                <th>车辆信息</th>
+                                                                <th>时间</th>
+                                                                <th data-hide="all">车牌号</th>
+                                                                <th data-hide="all">司机</th>
+                                                                <th data-hide="all">电话</th>
+                                                                <th data-hide="all">位置</th>
+                                                                <th>状态</th>
+                                                                <th>费用</th>
+                                                                <th>操作</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>2017121200001</td>
+                                                                <td><ul class="list-unstyled">
+                                                                    <li><span class="label label-primary">轮候调车</span></li>
+                                                                    <li style="margin-top: 5px">6.8米/高栏</li>
+                                                                    <ul class="list-inline" style="font-size: 12px">
+                                                                        <li  style="color: #b986bc;">10吨</li>
+                                                                        <li style="color: #9bc68a;">20方</li>
+                                                                        <li style="color: #7eb9f0;">2000公里</li>
+                                                                    </ul>
+                                                                </ul>
+                                                            </td>
+                                                            <td>
+                                                                <ul class="list-unstyled">
+                                                                    <li> <strong>发布</strong> 2016-11-09 13:35</li>
+                                                                    <li><strong> 确车</strong> 2016-11-09 13:36</li>
+                                                                    <li><strong> 计划提货 </strong>2016-11-09 16:00</li>
+                                                                    <li><strong> 计划到货</strong> 2016-11-10 16:00</li>
+                                                                </ul>
+                                                            </td>
+                                                            <td>鲁G 123M</td>
+                                                            <td>张三</td>
+                                                            <td>13312312345</td>
+                                                            <td>山东省济南市绕城高速</td>
+                                                            <td>
+                                        <span class="label label-primary label-lg">已在途</span>
+                                    </td>
+                                                            <td ><span style="color: red">2000.00</span>元</td>
+                                                            <td>
+                                        <div class="btn-group">
+                                            <button class="btn  btn-warning btn-sm" ng-click="view()">查看运单</button>
+                                            
+                                        </div>
+                                    </td>
+                                                        </tr>
+                                                        
+                                                        <tr>
+                                                            <td>2017121200001</td>
+                                                            <td><ul class="list-unstyled">
+                                                                <li><span class="label label-primary">轮候调车</span></li>
+                                                                <li style="margin-top: 5px">6.8米/高栏</li>
+                                                                <ul class="list-inline" style="font-size: 12px">
+                                                                    <li  style="color: #b986bc;">10吨</li>
+                                                                    <li style="color: #9bc68a;">20方</li>
+                                                                    <li style="color: #7eb9f0;">2000公里</li>
+                                                                </ul>
+                                                            </ul>
+                                                        </td>
+                                                        <td>
+                                                            <ul class="list-unstyled">
+                                                                <li> <strong>发布</strong> 2016-11-09 13:35</li>
+                                                                <li><strong> 确车</strong> 2016-11-09 13:36</li>
+                                                                <li><strong> 计划提货 </strong>2016-11-09 16:00</li>
+                                                                <li><strong> 计划到货</strong> 2016-11-10 16:00</li>
+                                                            </ul>
+                                                        </td>
+                                                        <td>鲁G 123M</td>
+                                                        <td>张三</td>
+                                                        <td>13312312345</td>
+                                                        <td>山东省济南市绕城高速</td>
+                                                        <td>
+                                        <span class="label label-danger">匹配中</span>
+                                    </td>
+                                                        <td ><span style="color: red">2000.00</span>元</td>
+                                                        <td>
+                                        <div class="btn-group">
+                                            <button class="btn  btn-warning btn-sm" ng-click="view()">查看运单</button>
+                                            
+                                        </div>
+                                    </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>2017121200001</td>
+                                                        <td><ul class="list-unstyled">
+                                                            <li><span class="label label-primary">轮候调车</span></li>
+                                                            <li style="margin-top: 5px">6.8米/高栏</li>
+                                                            <ul class="list-inline" style="font-size: 12px">
+                                                                <li  style="color: #b986bc;">10吨</li>
+                                                                <li style="color: #9bc68a;">20方</li>
+                                                                <li style="color: #7eb9f0;">2000公里</li>
+                                                            </ul>
+                                                        </ul>
+                                                    </td>
+                                                    <td>
+                                                        <ul class="list-unstyled">
+                                                            <li> <strong>发布</strong> 2016-11-09 13:35</li>
+                                                            <li><strong> 确车</strong> 2016-11-09 13:36</li>
+                                                            <li><strong> 计划提货 </strong>2016-11-09 16:00</li>
+                                                            <li><strong> 计划到货</strong> 2016-11-10 16:00</li>
+                                                        </ul>
+                                                    </td>
+                                                    <td>鲁G 123M</td>
+                                                    <td>张三</td>
+                                                    <td>13312312345</td>
+                                                    <td>山东省济南市绕城高速</td>
+                                                    <td>
+                                        <span class="label label-warning">待提货</span>
+                                    </td>
+                                                    <td ><span style="color: red">2000.00</span>元</td>
+                                                    <td>
+                                        <div class="btn-group">
+                                            <button class="btn  btn-warning btn-sm" ng-click="view()">查看运单</button>
+                                            
+                                        </div>
+                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>2017121200001</td>
+                                                    <td><ul class="list-unstyled">
+                                                        <li><span class="label label-primary">轮候调车</span></li>
+                                                        <li style="margin-top: 5px">6.8米/高栏</li>
+                                                        <ul class="list-inline" style="font-size: 12px">
+                                                            <li  style="color: #b986bc;">10吨</li>
+                                                            <li style="color: #9bc68a;">20方</li>
+                                                            <li style="color: #7eb9f0;">2000公里</li>
+                                                        </ul>
+                                                    </ul>
+                                                </td>
+                                                <td>
+                                                    <ul class="list-unstyled">
+                                                        <li> <strong>发布</strong> 2016-11-09 13:35</li>
+                                                        <li><strong> 确车</strong> 2016-11-09 13:36</li>
+                                                        <li><strong> 计划提货 </strong>2016-11-09 16:00</li>
+                                                        <li><strong> 计划到货</strong> 2016-11-10 16:00</li>
+                                                    </ul>
+                                                </td>
+                                                <td>鲁G 123M</td>
+                                                <td>张三</td>
+                                                <td>13312312345</td>
+                                                <td>山东省济南市绕城高速</td>
+                                                <td>
+                                        <span class="label label-primary">已在途</span>
+                                    </td>
+                                                <td ><span style="color: red">2000.00</span>元</td>
+                                                <td>
+                                        <div class="btn-group">
+                                            <button class="btn  btn-warning btn-sm" ng-click="view()">查看运单</button>
+                                            
+                                        </div>
+                                    </td>
+                                            </tr>
+                                            <tr>
+                                                <td>2017121200001</td>
+                                                <td><ul class="list-unstyled">
+                                                    <li><span class="label label-primary">轮候调车</span></li>
+                                                    <li style="margin-top: 5px">6.8米/高栏</li>
+                                                    <ul class="list-inline" style="font-size: 12px">
+                                                        <li  style="color: #b986bc;">10吨</li>
+                                                        <li style="color: #9bc68a;">20方</li>
+                                                        <li style="color: #7eb9f0;">2000公里</li>
+                                                    </ul>
+                                                </ul>
+                                            </td>
+                                            <td>
+                                                <ul class="list-unstyled">
+                                                    <li> <strong>发布</strong> 2016-11-09 13:35</li>
+                                                    <li><strong> 确车</strong> 2016-11-09 13:36</li>
+                                                    <li><strong> 计划提货 </strong>2016-11-09 16:00</li>
+                                                    <li><strong> 计划到货</strong> 2016-11-10 16:00</li>
+                                                </ul>
+                                            </td>
+                                            <td>鲁G 123M</td>
+                                            <td>张三</td>
+                                            <td>13312312345</td>
+                                            <td>山东省济南市绕城高速</td>
+                                            <td>
+                                        <span class="label label-primary">已在途</span>
+                                    </td>
+                                            <td ><span style="color: red">2000.00</span>元</td>
+                                            <td>
+                                        <div class="btn-group">
+                                            <button class="btn  btn-warning btn-sm" ng-click="view()">查看运单</button>
+                                            
+                                        </div>
+                                    </td>
+                                        </tr>
+                                        <tr>
+                                            <td>2017121200001</td>
+                                            <td><ul class="list-unstyled">
+                                                <li><span class="label label-primary">轮候调车</span></li>
+                                                <li style="margin-top: 5px">6.8米/高栏</li>
+                                                <ul class="list-inline" style="font-size: 12px">
+                                                    <li  style="color: #b986bc;">10吨</li>
+                                                    <li style="color: #9bc68a;">20方</li>
+                                                    <li style="color: #7eb9f0;">2000公里</li>
+                                                </ul>
+                                            </ul>
+                                        </td>
+                                        <td>
+                                            <ul class="list-unstyled">
+                                                <li> <strong>发布</strong> 2016-11-09 13:35</li>
+                                                <li><strong> 确车</strong> 2016-11-09 13:36</li>
+                                                <li><strong> 计划提货 </strong>2016-11-09 16:00</li>
+                                                <li><strong> 计划到货</strong> 2016-11-10 16:00</li>
+                                            </ul>
+                                        </td>
+                                        <td>鲁G 123M</td>
+                                        <td>张三</td>
+                                        <td>13312312345</td>
+                                        <td>山东省济南市绕城高速</td>
+                                        <td>
+                                        <span class="label label-primary">已在途</span>
+                                    </td>
+                                        <td ><span style="color: red">2000.00</span>元</td>
+                                        <td>
+                                        <div class="btn-group">
+                                            <button class="btn  btn-warning btn-sm" ng-click="view()">查看运单</button>
+                                            
+                                        </div>
+                                    </td>
+                                    </tr>
+                                    <tr>
+                                        <td>2017121200001</td>
+                                        <td><ul class="list-unstyled">
+                                            <li><span class="label label-primary">轮候调车</span></li>
+                                            <li style="margin-top: 5px">6.8米/高栏</li>
+                                            <ul class="list-inline" style="font-size: 12px">
+                                                <li  style="color: #b986bc;">10吨</li>
+                                                <li style="color: #9bc68a;">20方</li>
+                                                <li style="color: #7eb9f0;">2000公里</li>
+                                            </ul>
+                                        </ul>
+                                    </td>
+                                    <td>
+                                        <ul class="list-unstyled">
+                                            <li> <strong>发布</strong> 2016-11-09 13:35</li>
+                                            <li><strong> 确车</strong> 2016-11-09 13:36</li>
+                                            <li><strong> 计划提货 </strong>2016-11-09 16:00</li>
+                                            <li><strong> 计划到货</strong> 2016-11-10 16:00</li>
+                                        </ul>
+                                    </td>
+                                    <td>鲁G 123M</td>
+                                    <td>张三</td>
+                                    <td>13312312345</td>
+                                    <td>山东省济南市绕城高速</td>
+                                    <td>
+                                        <span class="label label-primary">已在途</span>
+                                    </td>
+                                    <td ><span style="color: red">2000.00</span>元</td>
+                                    <td>
+                                        <div class="btn-group">
+                                            <button class="btn  btn-warning btn-sm" ng-click="view()">查看运单</button>
+                                            
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>2017121200001</td>
+                                    <td><ul class="list-unstyled">
+                                        <li><span class="label label-primary">轮候调车</span></li>
+                                        <li style="margin-top: 5px">6.8米/高栏</li>
+                                        <ul class="list-inline" style="font-size: 12px">
+                                            <li  style="color: #b986bc;">10吨</li>
+                                            <li style="color: #9bc68a;">20方</li>
+                                            <li style="color: #7eb9f0;">2000公里</li>
+                                        </ul>
+                                    </ul>
+                                </td>
+                                <td>
+                                    <ul class="list-unstyled">
+                                        <li> <strong>发布</strong> 2016-11-09 13:35</li>
+                                        <li><strong> 确车</strong> 2016-11-09 13:36</li>
+                                        <li><strong> 计划提货 </strong>2016-11-09 16:00</li>
+                                        <li><strong> 计划到货</strong> 2016-11-10 16:00</li>
+                                    </ul>
+                                </td>
+                                <td>鲁G 123M</td>
+                                <td>张三</td>
+                                <td>13312312345</td>
+                                <td>山东省济南市绕城高速</td>
+                                <td>
+                                        <span class="label label-primary">已在途</span>
+                                    </td>
+                                <td ><span style="color: red">2000.00</span>元</td>
+                                <td>
+                                        <div class="btn-group">
+                                            <button class="btn  btn-warning btn-sm" ng-click="view()">查看运单</button>
+                                            
+                                        </div>
+                                    </td>
+                            </tr>
+                            <tr>
+                                <td>2017121200001</td>
+                                <td><ul class="list-unstyled">
+                                    <li><span class="label label-primary">轮候调车</span></li>
+                                    <li style="margin-top: 5px">6.8米/高栏</li>
+                                    <ul class="list-inline" style="font-size: 12px">
+                                        <li  style="color: #b986bc;">10吨</li>
+                                        <li style="color: #9bc68a;">20方</li>
+                                        <li style="color: #7eb9f0;">2000公里</li>
+                                    </ul>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul class="list-unstyled">
+                                    <li> <strong>发布</strong> 2016-11-09 13:35</li>
+                                    <li><strong> 确车</strong> 2016-11-09 13:36</li>
+                                    <li><strong> 计划提货 </strong>2016-11-09 16:00</li>
+                                    <li><strong> 计划到货</strong> 2016-11-10 16:00</li>
+                                </ul>
+                            </td>
+                            <td>鲁G 123M</td>
+                            <td>张三</td>
+                            <td>13312312345</td>
+                            <td>山东省济南市绕城高速</td>
+                            <td>
+                                        <span class="label label-primary">已在途</span>
+                                    </td>
+                            <td ><span style="color: red">2000.00</span>元</td>
+                            <td>
+                                        <div class="btn-group">
+                                            <button class="btn  btn-warning btn-sm" ng-click="view()">查看运单</button>
+                                            
+                                        </div>
+                                    </td>
+                        </tr>
+                        <tr>
+                            <td>2017121200001</td>
+                            <td><ul class="list-unstyled">
+                                <li><span class="label label-primary">轮候调车</span></li>
+                                <li style="margin-top: 5px">6.8米/高栏</li>
+                                <ul class="list-inline" style="font-size: 12px">
+                                    <li  style="color: #b986bc;">10吨</li>
+                                    <li style="color: #9bc68a;">20方</li>
+                                    <li style="color: #7eb9f0;">2000公里</li>
+                                </ul>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul class="list-unstyled">
+                                <li> <strong>发布</strong> 2016-11-09 13:35</li>
+                                <li><strong> 确车</strong> 2016-11-09 13:36</li>
+                                <li><strong> 计划提货 </strong>2016-11-09 16:00</li>
+                                <li><strong> 计划到货</strong> 2016-11-10 16:00</li>
+                            </ul>
+                        </td>
+                        <td>鲁G 123M</td>
+                        <td>张三</td>
+                        <td>13312312345</td>
+                        <td>山东省济南市绕城高速</td>
+                        <td>
+                                        <span class="label label-primary">已在途</span>
+                                    </td>
+                        <td ><span style="color: red">2000.00</span>元</td>
+                        <td>
+                                        <div class="btn-group">
+                                            <button class="btn  btn-warning btn-sm" ng-click="view()">查看运单</button>
+                                            
+                                        </div>
+                                    </td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                <tr>
+                    <td colspan="5">
+                    <ul class="pagination pull-right"></ul>
+                </td>
+            </tr>
+            </tfoot>
+        </table>
+    </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+    </div>
+        <script>
+        $(document).ready(function() {
+        $('.footable').footable();
+        $('.footable2').footable();
+        });
+        </script>
